@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4278356127332818}
   - component: {fileID: 33551298502039104}
   - component: {fileID: 23489470550864878}
+  - component: {fileID: 114021043386187872}
   m_Layer: 0
   m_Name: Fan
   m_TagString: Untagged
@@ -116,8 +117,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335958607354298}
-  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.227768, y: 0.45267442, z: 7.348419}
+  m_LocalRotation: {x: 0.000000013986355, y: 0.9851501, z: -0.00000008025087, w: 0.17169562}
+  m_LocalPosition: {x: -7.3332844, y: 0.9526744, z: 40.62787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522396619935862}
@@ -126,7 +127,7 @@ Transform:
   - {fileID: 4442465610748800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 160.227, z: 0}
 --- !u!4 &4278356127332818
 Transform:
   m_ObjectHideFlags: 1
@@ -383,3 +384,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 15.034543, z: 5.0396414}
   m_Center: {x: 0.06594515, y: 7.0645976, z: -0.02514565}
+--- !u!114 &114021043386187872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576808460891832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f7085643b4259438b579e97917c9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
