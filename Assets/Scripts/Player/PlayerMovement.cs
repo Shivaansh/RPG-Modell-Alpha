@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
-
-
+using UnityEngine.AI;
 //TODO: fix WASD = Click movement conflict
+
+
 [RequireComponent(typeof (ThirdPersonCharacter))]
+
 public class PlayerMovement : MonoBehaviour
 {
-    ThirdPersonCharacter gameCharacter;   // A reference to the ThirdPersonCharacter on the object
-
+    ThirdPersonCharacter gameCharacter = null;   // A reference to the ThirdPersonCharacter on the object
+   // AICharacterControl aiControl = null;
     CameraRaycaster cameraRaycaster;
-
     Vector3 currentClickTarget, clickPoint;
 
     bool isInDirectMode = false;
@@ -18,13 +19,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float walkStopRadius = 0.2f;
     [SerializeField] float attackMoveStopRadius = 3.0f;
+    //maybe comment these
 
     private void Start()
     {
         cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
         gameCharacter = GetComponent<ThirdPersonCharacter>();
         currentClickTarget = transform.position;
-    }
+        //aiControl = GetComponent<AICharacterControl>();
+          }
 
     // Fixed update is called in sync with physics
     private void FixedUpdate()
@@ -98,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
         runToDestination();
 
-    }
+    } //maybe nuke this method
 
     private void runToDestination()
     {
@@ -117,22 +120,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //renders gizmos in the game, called every time gizmos are drawn
-    void OnDrawGizmos()
-    {
-        //print("Gizmo drawn"); <- debugging statement
+    //void OnDrawGizmos()
+    //{
+    //    //print("Gizmo drawn"); <- debugging statement
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, currentClickTarget);
-        //draw a line from the current position of the Player to the click target
-        Gizmos.DrawSphere(currentClickTarget, 0.1f); //final destination visualization
-        Gizmos.DrawSphere(clickPoint, 0.15f); //click point visualization
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(transform.position, currentClickTarget);
+    //    //draw a line from the current position of the Player to the click target
+    //    Gizmos.DrawSphere(currentClickTarget, 0.1f); //final destination visualization
+    //    Gizmos.DrawSphere(clickPoint, 0.15f); //click point visualization
 
-        //draw attack region sphere
-        Gizmos.color = new Color(255f, 0f, 0f, 0.3f);
-        Gizmos.DrawWireSphere(transform.position, attackMoveStopRadius);
+    //    //draw attack region sphere
+    //    Gizmos.color = new Color(255f, 0f, 0f, 0.3f);
+    //    Gizmos.DrawWireSphere(transform.position, attackMoveStopRadius);
 
-        //consider playing around with these values
-    }
+    //    //consider playing around with these values
+    //}
     
 
     
