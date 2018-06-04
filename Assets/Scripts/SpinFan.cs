@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SpinFan : MonoBehaviour {
 
-    public int spinDegrees;
+    [SerializeField] int spinDegrees;
+    //the speed of degrees rotated per second for the fan 
+
     //this class was first used to spin the fan on the windmill
     //change if applied to the prefab will cause the fan to spin 25 degrees per second
 	// Use this for initialization
