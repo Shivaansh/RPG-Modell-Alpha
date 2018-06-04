@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Enemy : MonoBehaviour {
+    //TODO: Fine tune range values for enemy stop and player AttackStop
 
     //maximum player health
     [SerializeField] float maxHealthPoints = 100f;
