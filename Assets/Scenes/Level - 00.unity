@@ -100,7 +100,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 60
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -1138,6 +1138,11 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 447262, guid: 61fb7c015a745ea42900f99f6f123343, type: 2}
   m_PrefabInternal: {fileID: 2116119289}
+--- !u!1 &586866176 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1208303666614578, guid: 6bb704cf97634954e865478cc8336daf,
+    type: 2}
+  m_PrefabInternal: {fileID: 196157255}
 --- !u!4 &590698577 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4872504654109266, guid: 586534c0f9a745b4086c007888993b85,
@@ -1398,7 +1403,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4391235682297464, guid: bc6b555a4ab24a846b1afd9834f511a2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -23.9
+      value: 27.1
       objectReference: {fileID: 0}
     - target: {fileID: 4391235682297464, guid: bc6b555a4ab24a846b1afd9834f511a2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2522,7 +2527,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1077075974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.600006, y: 0, z: 14.200012}
+  m_LocalPosition: {x: 16.5, y: 0, z: -35.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1994879425}
@@ -4593,6 +4598,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 372.436
       objectReference: {fileID: 0}
+    - target: {fileID: 114299056362534034, guid: 2f5eb7f12e49bf147878c9f5b2347e7f,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 586866176}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
   m_IsPrefabParent: 0
@@ -4946,6 +4956,10 @@ Prefab:
     - target: {fileID: 408730, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469404, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
+      propertyPath: m_MoveSpeedMultiplier
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}

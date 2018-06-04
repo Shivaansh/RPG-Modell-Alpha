@@ -19,6 +19,9 @@ public class SpinFan : MonoBehaviour {
 
         // Rotate the object around its local Z axis at 1 degree per second
         transform.Rotate(Vector3.forward * Time.deltaTime * spinDegrees);
+        //right = x
+        //up = y
+        //forward = z
 
         
     }
