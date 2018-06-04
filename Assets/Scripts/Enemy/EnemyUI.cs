@@ -20,19 +20,13 @@ public class EnemyUI : MonoBehaviour {
         //pos is a test variable
 
         //TODO:FIX ERROR
-        /**
-         * When instantiated, the enemyCanvas is instantiated with an offset, instead of being instantiated at the enemy pposition.
-         * Also, the scale of the canvas should 0.05 oon X and Y scale. 
-         * 
-         * Possible fix: reset transform of enemy canvas prefab.
-         * SOLUTION: Need to reset the transform and scale of enemy canvas prefab before adding to enemy prefabs
-         */
+
     }
 
     // Update is called once per frame 
     void LateUpdate()
     {
         transform.LookAt(cameraToLookAt.transform);
-        transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
+       // transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
     }
 }
