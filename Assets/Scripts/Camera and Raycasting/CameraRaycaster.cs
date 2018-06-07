@@ -1,113 +1,101 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Linq;
+using System.Collections.Generic;
 
 
-// SECTION 1, Lecture 10: Watch Unity RPG course for full information on how this works, for reference
+/*
+ * This class is now responsible for announcing the current layer that is raycast as 
+ * well as the current layer that is clicked on (using the FindTopPriorityHit (RaycastHit[] raycastHits) ) method.
+ * The layer that this method returns will be the same as the layer that CursorAffordance.cs
+ * reads, thus reducing discrepancies and improving consistency.
+ * 
+ */
 public class CameraRaycaster : MonoBehaviour
 {
-    void Start()
-    {
-        viewCamera = Camera.main;
-        //finds main camera and assigns to viewCamera variable, camera should be tagged appropriately
+	// INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
+	[SerializeField] int[] layerPriorities; //exposes the array in inspector
+    //layerType to be replaced with integer indexed layers
 
-        
-        /*
-         * We do not use () with layerChangeHandler because layerChangeObservers is a SET OF FUNCTIONS and this statement
-         * aims to imply that we are adding the layerChangeHandler function to the set of functions. THIS IS NOT A FUNCTION CALL
-         * NOTE: can be protected using the event keyword
-         */
-    }
+    float maxRaycastDepth = 100f; // Hard coded value
+	int topPriorityLayerLastFrame = -1; // So get ? from start with Default layer terrain
+
+	// Setup delegates for broadcasting layer changes to other classes
+    public delegate void OnCursorLayerChange(int newLayer); // declare new delegate type
+    public event OnCursorLayerChange notifyLayerChangeObservers; // instantiate an observer set
+
+    //new delegate system
+	public delegate void OnClickPriorityLayer(RaycastHit raycastHit, int layerHit); // declare new delegate type
+	public event OnClickPriorityLayer notifyMouseClickObservers; // instantiate an observer set
+
 
     void Update()
-    {
-        // Look for and return priority layer hit
-        foreach (Layer layer in layerPriorities) //loops through layer hit
-        {
-            var hit = RaycastForLayer(layer);
-            if (hit.HasValue)
-            {
-                m_hit = hit.Value;
-                if (m_layerHit != layer) //if the layer has changed
-                {
-                    m_layerHit = layer;
-                    layerChangeObservers(); //calling delegates
-                }
-                
-                return;
-            }
-        }
-        // Otherwise return background hit
-        //this is an artificial hit
+	{
+		// Check if pointer is over an interactable UI element (GameObject must be of UI type)
+        //requires EventSystem to work
+		if (EventSystem.current.IsPointerOverGameObject ())
+		{
+			NotifyObserersIfLayerChanged (5);
+			return; // Stop looking for other objects
+		}
 
-        //allows unknown cursor to work
-        m_hit.distance = distanceToBackground;
-        if(m_layerHit != Layer.RaycastEndStop)
-        {
-            m_layerHit = Layer.RaycastEndStop;
-            layerChangeObservers(); //calling delegates
-        }
-    }
+		// Raycast to max depth, every frame as things can move under mouse
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit[] raycastHits = Physics.RaycastAll (ray, maxRaycastDepth);
+        //list of Raycast hits returned for every raycast
 
-    // ? for variable return types, RaycastHit is non nullable, ? allows the null return type
-    RaycastHit? RaycastForLayer(Layer layer)
-    {
-        //forms layer mask
-        int layerMask = 1 << (int)layer; // See Unity docs for mask formation
-                                         //bit shift example, quick on hardware level
-        //given a screen point, turn it into a ray
-        Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+        //on raycast hit, find the top priority hit from the array of hits
+        RaycastHit? priorityHit = FindTopPriorityHit(raycastHits);
+        if (!priorityHit.HasValue) // if hit no priority object
+		{
+			NotifyObserersIfLayerChanged (0); // broadcast default layer
+			return;
+		}
 
-        //out parameter
-        RaycastHit hit; // used as an out parameter
+		// Notify delegates of layer change
+		var layerHit = priorityHit.Value.collider.gameObject.layer; //look up demeter's law and optimize
+		NotifyObserersIfLayerChanged(layerHit);
+		
+		// Notify delegates of highest priority game object under mouse when clicked
+		if (Input.GetMouseButton (0)) //mouse click enquiry, not needed in PLayerMovement anymore
+		{
+			notifyMouseClickObservers (priorityHit.Value, layerHit);
+		}
+	}
 
-        //hit stores the result of raycast for the ray 'ray', for a max distance of distanceToBackground
-        bool hasHit = Physics.Raycast(ray, out hit, distanceToBackground, layerMask);
-        if (hasHit)
-        {
-            return hit;
-        }
-        return null;
-    }
+    //notifies the observers of a change in layer
+	void NotifyObserersIfLayerChanged(int newLayer)
+	{
+		if (newLayer != topPriorityLayerLastFrame)
+		{
+			topPriorityLayerLastFrame = newLayer;
+			notifyLayerChangeObservers (newLayer);
+		}
+	}
 
+//************************************************
+    //this is the most important method of this class
+    RaycastHit? FindTopPriorityHit (RaycastHit[] raycastHits)
+	{
+		// Form list of layer numbers hit
+		List<int> layersOfHitColliders = new List<int> ();
+		foreach (RaycastHit hit in raycastHits)
+		{
+			layersOfHitColliders.Add (hit.collider.gameObject.layer);
+		}
 
-
-    // *********************** HELPER METHODS **********************
-
-    public Layer[] layerPriorities = {
-        Layer.Enemy,
-        Layer.Walkable
-    };
-
-    [SerializeField] float distanceToBackground = 100f; //max raycast distance
-    //[SerializeField] behaves like final in Java for other classes
-    //other classes cannot edit this value
-    Camera viewCamera;
-
-    //RaycastHit is a rich type which gives lot of info about what the ray hits
-    RaycastHit m_hit;
-
-    //getter method
-    public RaycastHit hit
-    {
-        get { return m_hit; }
-    }
-
-    //getter method
-    Layer m_layerHit;
-    public Layer layerHit
-    {
-        get { return m_layerHit; }
-    }
-
-    /**************************************OBSERVER PATTERN IMPLEMENTATION METHODS******************************************/
-
-
-    //declare new delegate type; for Observer Pattern implementation
-    public delegate void OnLayerChange();
-    public event OnLayerChange layerChangeObservers; //instantiating set of observers 
-
-
-    
-
-  
-
+		// Step through layers in order of priority looking for a gameobject with that layer
+		foreach (int layer in layerPriorities)
+		{
+			foreach (RaycastHit hit in raycastHits)
+			{
+				if (hit.collider.gameObject.layer == layer)
+				{
+					return hit; // stop looking
+				}
+			}
+		}
+		return null; // because cannot use GameObject? nullable
+	}
+//************************************************************
 }

@@ -11,8 +11,7 @@ public class Enemy : MonoBehaviour {
 
     //enemy attacking range
     [SerializeField] float triggerRadius = 4f;
-    
-    
+
     //current health level
     private float currentHealthPoints = 100f;
 
@@ -37,10 +36,8 @@ public class Enemy : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //player variable retrieves the player from the scene
-
         //character control is the AI Character control script
         CharacterControl = GetComponent<AICharacterControl>();
-        
     }
 
     /*

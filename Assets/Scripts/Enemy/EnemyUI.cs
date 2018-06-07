@@ -17,9 +17,6 @@ public class EnemyUI : MonoBehaviour {
     {
         cameraToLookAt = Camera.main;
         Instantiate(enemyCanvasPrefab, transform.position, transform.rotation, transform);
-        //pos is a test variable
-
-        //TODO:FIX ERROR
 
     }
 
@@ -27,6 +24,5 @@ public class EnemyUI : MonoBehaviour {
     void LateUpdate()
     {
         transform.LookAt(cameraToLookAt.transform);
-       // transform.rotation = Quaternion.LookRotation(cameraToLookAt.transform.forward);
     }
 }

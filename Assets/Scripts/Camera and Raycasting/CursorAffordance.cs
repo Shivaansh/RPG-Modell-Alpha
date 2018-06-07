@@ -14,46 +14,40 @@ public class CursorAffordance : MonoBehaviour {
     [SerializeField] Texture2D enemyCursor = null;
     [SerializeField] Texture2D unknownCursor = null;
     //these variables store the sprites to use for the cursor
-
     [SerializeField] Vector2 cursorHotpot = new Vector2(96, 96);
     //the value (96, 96) is derived via trial and error
-    // TODO: check the movement for different values of Cursor hotspot
-
+    //TODO: fix conflict between const and [SerializeField] 
+    [SerializeField] const int walkableLayerIndex = 8; //coinst so that it works with switch statement
+    [SerializeField] const int enemyLayerIndex = 9;
     CameraRaycaster camraycaster;
+
 	// Use this for initialization
 	void Start ()
     {
         camraycaster = GetComponent<CameraRaycaster>();
-        camraycaster.layerChangeObservers += OnDelegateCall; //registering        
+        camraycaster.notifyLayerChangeObservers += OnLayerChange; //registering        
 	}
 	
 	// Update is called once per frame
-	void OnDelegateCall()
+	void OnLayerChange(int newLayer)
     {    
         print("Cursor now on new layer");
-        switch (camraycaster.layerHit)
+        switch (newLayer)
         {
-            case Layer.Walkable:
+            case walkableLayerIndex:
+                print("Cursor now on walkable layer");
                 Cursor.SetCursor(walkCursor, cursorHotpot, CursorMode.Auto);
                 break;
 
-            case Layer.Enemy:
+            case enemyLayerIndex:
+                print("Cursor now on enemy layer");
                 Cursor.SetCursor(enemyCursor, cursorHotpot, CursorMode.Auto);
-                break;
-
-            case Layer.RaycastEndStop:
-                Cursor.SetCursor(unknownCursor, cursorHotpot, CursorMode.Auto);
                 break;
 
             default:
                 Debug.Log("Unknown dimension detected, no cursor applicable");
+                Cursor.SetCursor(unknownCursor, cursorHotpot, CursorMode.Auto);
                 return;
         }
-        /**
-         * camraycaster retrieves ray casting information
-         */
     }
-
-
-
 }
