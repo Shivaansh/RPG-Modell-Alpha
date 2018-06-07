@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 20213478521446376}
   - component: {fileID: 124981690279881784}
   - component: {fileID: 81692398746047948}
-  - component: {fileID: 114915891974895216}
-  - component: {fileID: 114364256666077410}
+  - component: {fileID: 114439308887421482}
+  - component: {fileID: 114069870455965734}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104810328586914}
   m_LocalRotation: {x: 0.24481669, y: -0.49215394, z: 0.14650235, w: 0.82242715}
-  m_LocalPosition: {x: 26.4, y: 14.997254, z: -103.6}
+  m_LocalPosition: {x: 1.61, y: 5.15, z: -1.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4142360781337088}
@@ -117,7 +117,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377791598579462}
   m_Enabled: 1
---- !u!114 &114364256666077410
+--- !u!114 &114069870455965734
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -132,6 +132,19 @@ MonoBehaviour:
   enemyCursor: {fileID: 2800000, guid: 89280b09f2188f44f89d21ab5f3f65dd, type: 3}
   unknownCursor: {fileID: 2800000, guid: e761d00bf13c11a40a148914dd803a42, type: 3}
   cursorHotpot: {x: 0, y: 0}
+--- !u!114 &114439308887421482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377791598579462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02853f5d34bd8f429969ac34c466d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerPriorities: 0900000008000000
+  clickPointImage: {fileID: 0}
 --- !u!114 &114801705797244364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,19 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd046f5b031fe24cbaca2459016252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114915891974895216
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377791598579462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c69e9f7971a92246960cbce118af7c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerPriorities: 0900000008000000
-  distanceToBackground: 100
 --- !u!124 &124981690279881784
 Behaviour:
   m_ObjectHideFlags: 1

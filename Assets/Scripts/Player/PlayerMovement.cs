@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 currentClickTarget, clickPoint;
     GameObject runPoint;
 
+
     const int walkableLayerIndex = 8; //coinst so that it works with switch statement
     const int enemyLayerIndex = 9;
 
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 runPoint.transform.position = raycastHit.point;
                 currentClickTarget = raycastHit.point;
                 aiControl.SetTarget(runPoint.transform);
+               
                 break;
 
             default:
