@@ -16,7 +16,7 @@ public class CameraRaycaster : MonoBehaviour
 	// INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
 	[SerializeField] int[] layerPriorities; //exposes the array in inspector
     //layerType to be replaced with integer indexed layers
-    public GameObject clickPointImage;
+    
     float maxRaycastDepth = 100f; // Hard coded value
 	int topPriorityLayerLastFrame = -1; // So get ? from start with Default layer terrain
 
