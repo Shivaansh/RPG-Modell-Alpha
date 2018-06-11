@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: a6f244e75fd71ac4d9dcc558509ba2b9
+timeCreated: 1447693972
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Darius
+    100002: //RootNode
+    100004: Darius_CAT_Eye_L
+    100006: Darius_CAT_Eye_R
+    100008: Darius_CAT_Head
+    100010: Darius_CAT_Jaw
+    100012: Darius_CAT_L_Calf
+    100014: Darius_CAT_L_Collarbone
+    100016: Darius_CAT_L_Digit_1
+    100018: Darius_CAT_L_Digit_1_1
+    100020: Darius_CAT_L_Digit_1_2
+    100022: Darius_CAT_L_Digit_2_1
+    100024: Darius_CAT_L_Digit_2_2
+    100026: Darius_CAT_L_Digit_3_1
+    100028: Darius_CAT_L_Digit_3_2
+    100030: Darius_CAT_L_Digit_4_1
+    100032: Darius_CAT_L_Digit_4_2
+    100034: Darius_CAT_L_Foot
+    100036: Darius_CAT_L_Forearm
+    100038: Darius_CAT_L_Palm
+    100040: Darius_CAT_L_Thigh
+    100042: Darius_CAT_L_Upperarm
+    100044: Darius_CAT_Neck
+    100046: Darius_CAT_Pelvis
+    100048: Darius_CAT_R_Calf
+    100050: Darius_CAT_R_Collarbone
+    100052: Darius_CAT_R_Digit_1
+    100054: Darius_CAT_R_Digit_1_1
+    100056: Darius_CAT_R_Digit_1_2
+    100058: Darius_CAT_R_Digit_2_1
+    100060: Darius_CAT_R_Digit_2_2
+    100062: Darius_CAT_R_Digit_3_1
+    100064: Darius_CAT_R_Digit_3_2
+    100066: Darius_CAT_R_Digit_4_1
+    100068: Darius_CAT_R_Digit_4_2
+    100070: Darius_CAT_R_Foot
+    100072: Darius_CAT_R_Forearm
+    100074: Darius_CAT_R_Palm
+    100076: Darius_CAT_R_Thigh
+    100078: Darius_CAT_R_Upperarm
+    100080: Darius_CAT_Ribcage
+    100082: Darius_CAT_Spine
+    100084: Sword
+    400000: Darius
+    400002: //RootNode
+    400004: Darius_CAT_Eye_L
+    400006: Darius_CAT_Eye_R
+    400008: Darius_CAT_Head
+    400010: Darius_CAT_Jaw
+    400012: Darius_CAT_L_Calf
+    400014: Darius_CAT_L_Collarbone
+    400016: Darius_CAT_L_Digit_1
+    400018: Darius_CAT_L_Digit_1_1
+    400020: Darius_CAT_L_Digit_1_2
+    400022: Darius_CAT_L_Digit_2_1
+    400024: Darius_CAT_L_Digit_2_2
+    400026: Darius_CAT_L_Digit_3_1
+    400028: Darius_CAT_L_Digit_3_2
+    400030: Darius_CAT_L_Digit_4_1
+    400032: Darius_CAT_L_Digit_4_2
+    400034: Darius_CAT_L_Foot
+    400036: Darius_CAT_L_Forearm
+    400038: Darius_CAT_L_Palm
+    400040: Darius_CAT_L_Thigh
+    400042: Darius_CAT_L_Upperarm
+    400044: Darius_CAT_Neck
+    400046: Darius_CAT_Pelvis
+    400048: Darius_CAT_R_Calf
+    400050: Darius_CAT_R_Collarbone
+    400052: Darius_CAT_R_Digit_1
+    400054: Darius_CAT_R_Digit_1_1
+    400056: Darius_CAT_R_Digit_1_2
+    400058: Darius_CAT_R_Digit_2_1
+    400060: Darius_CAT_R_Digit_2_2
+    400062: Darius_CAT_R_Digit_3_1
+    400064: Darius_CAT_R_Digit_3_2
+    400066: Darius_CAT_R_Digit_4_1
+    400068: Darius_CAT_R_Digit_4_2
+    400070: Darius_CAT_R_Foot
+    400072: Darius_CAT_R_Forearm
+    400074: Darius_CAT_R_Palm
+    400076: Darius_CAT_R_Thigh
+    400078: Darius_CAT_R_Upperarm
+    400080: Darius_CAT_Ribcage
+    400082: Darius_CAT_Spine
+    400084: Sword
+    2300000: Sword
+    3300000: Sword
+    4300000: Darius
+    4300002: Sword
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Darius
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
