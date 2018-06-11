@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour, IDamageable{
     //TODO: Fine tune range values for enemy stop and player AttackStop
 
     //maximum player health
@@ -60,5 +60,10 @@ public class Enemy : MonoBehaviour {
             CharacterControl.SetTarget(transform);
             //when the player goes far away from the enemy, the enemy stops and stays in position
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
     }
 }
