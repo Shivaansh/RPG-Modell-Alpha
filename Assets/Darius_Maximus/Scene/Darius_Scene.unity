@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4484859, g: 0.4985273, b: 0.57564336, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -209,7 +209,9 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed by
+    Humanoid clips.\n\tFrom animation clip 'Idle'"
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &921488672
@@ -554,5 +556,4 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 83c641e506f8afc4682bf9b5816b791f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00ed3218b11149648a03e4d264b9f4f9, type: 3}
-  m_RootGameObject: {fileID: 921488670}
   m_IsPrefabParent: 0
