@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0546d52b2c65a4dacb76bd4a7458a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageValue: 30
 --- !u!1001 &83539117
 Prefab:
   m_ObjectHideFlags: 0
@@ -648,11 +649,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 447262, guid: 61fb7c015a745ea42900f99f6f123343, type: 2}
   m_PrefabInternal: {fileID: 2116119289}
---- !u!1 &586866176 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1208303666614578, guid: 6bb704cf97634954e865478cc8336daf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1947249743}
 --- !u!1001 &657424230
 Prefab:
   m_ObjectHideFlags: 0
@@ -2123,27 +2119,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 408730, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.0000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 408730, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.0000002
-      objectReference: {fileID: 0}
     - target: {fileID: 149790, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
       propertyPath: m_Name
       value: Enemy (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 408730, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 372.436
-      objectReference: {fileID: 0}
-    - target: {fileID: 114299056362534034, guid: 2f5eb7f12e49bf147878c9f5b2347e7f,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 586866176}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f5eb7f12e49bf147878c9f5b2347e7f, type: 2}
   m_IsPrefabParent: 0

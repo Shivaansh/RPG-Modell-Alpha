@@ -1373,9 +1373,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
-  m_LocalRotation: {x: -0, y: -0.704753, z: -0, w: 0.7094528}
-  m_LocalPosition: {x: 2.59, y: 0.5, z: 3.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.10831293, z: -0, w: 0.99411684}
+  m_LocalPosition: {x: -0.36001962, y: 0.5, z: -2.9399798}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 469942}
   - {fileID: 495908}
@@ -1383,7 +1383,7 @@ Transform:
   - {fileID: 4260442370314482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 138.69, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 372.436, z: 0}
 --- !u!4 &409212
 Transform:
   m_ObjectHideFlags: 1
@@ -2755,7 +2755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 100
-  triggerRadius: 15
+  triggerRadius: 4
+  moveRadius: 14
 --- !u!114 &114999936974511816
 MonoBehaviour:
   m_ObjectHideFlags: 1

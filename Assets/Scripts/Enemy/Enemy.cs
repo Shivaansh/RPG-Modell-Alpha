@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IDamageable{
 
     //enemy attacking range
     [SerializeField] float triggerRadius = 4f;
+    [SerializeField] float moveRadius = 14f;
 
     //current health level
     private float currentHealthPoints = 100f;
@@ -52,6 +53,12 @@ public class Enemy : MonoBehaviour, IDamageable{
 
         if (distToPlayer <= triggerRadius)
         {
+            print("Enemy in attack phase");
+            //placeholder for attack method call
+        }
+
+        if (distToPlayer <= moveRadius)
+        {
             CharacterControl.SetTarget(player.transform); //sets player as target for AICharacterControl Script
             //this makes the player the target for the enemy to move to
         }
@@ -65,5 +72,16 @@ public class Enemy : MonoBehaviour, IDamageable{
     public void TakeDamage(float damage)
     {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Draw attack radius sphere
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, triggerRadius);
+
+        //Draw move radius sphere
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, moveRadius);
     }
 }

@@ -12,4 +12,4 @@ I may be adding a new branch to this repo, one with and one without the new rayc
 
 Log June 7, 2018: Implemented the new Raycasting system and Player Pathfinding systems. Next Step: Fix planes and structures to work with navmesh (consider tilting plane to 60 degrees, or maybe implement a lift).
 
-Log June 9, 2018: Removed BridgegameObject and added a slope on the terrain (using the smooth height tool), baked new NavMesh which now allows player to go up and down the house.
+Log June 9, 2018: Removed BridgegameObject and added a slope on the terrain (using the smooth height tool), baked new NavMesh which now allows player to go up and down the house. NOTE: Should use the paint trees tool to create the forest.
