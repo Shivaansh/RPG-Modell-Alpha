@@ -65,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(currentClickTarget, 0.5f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(currentClickTarget, 0.2f);
     }
 
     /**
@@ -85,22 +85,6 @@ public class PlayerMovement : MonoBehaviour
 
         gameCharacter.Move(moveOn, false, false);
     }
-
-    //private void runToDestination()
-    //{
-    //    var playerToClick = currentClickTarget - transform.position;
-
-    //    if (playerToClick.magnitude >= walkStopRadius)
-    //    //move if the distance between player and target is more than stopping radius
-    //    {
-    //        //move player from current position to click target
-    //        gameCharacter.Move(currentClickTarget - transform.position, false, false);
-    //    }
-    //    else
-    //    {
-    //        gameCharacter.Move(Vector3.zero, false, false);
-    //    }
-    //}
     
     /**
      *  @brief: Reduces a vector by a specified float value (used for fine tuning gizmo rendering)

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-
     //advantage of using the interface design pattern is that this code will now work for ALL
     //gameObjects that can take damage without any modification
-    [SerializeField] float damageValue = 30f; //TODO: needs tuning
+    public float damageCaused; //accessible to other classes
+    public float proSpeedValue ; //TODO: needs 
+    //these values can be set by other classes
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -16,8 +17,7 @@ public class Projectile : MonoBehaviour {
         //the damaged component should implement the IDamageable interface
         if (damagedComponent)
         {
-            
-            (damagedComponent as IDamageable).TakeDamage(damageValue);
+            (damagedComponent as IDamageable).TakeDamage(damageCaused);
         }
     } 
 }

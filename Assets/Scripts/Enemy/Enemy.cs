@@ -6,26 +6,21 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class Enemy : MonoBehaviour, IDamageable{
     //TODO: Fine tune range values for enemy stop and player AttackStop
 
-    //maximum player health
-    [SerializeField] float maxHealthPoints = 100f;
+    [SerializeField] float triggerRadius = 4f;  //enemy attacking range
+    [SerializeField] float moveRadius = 14f;    
 
-    //enemy attacking range
-    [SerializeField] float triggerRadius = 4f;
-    [SerializeField] float moveRadius = 14f;
+    [SerializeField] GameObject projectileAttack;     //reference to projectile prefab
+   // [SerializeField] GameObject projectileSpawnPoint;     //reference to projectile spawn point (a prefab and a child of the Enemy)  -> projectileSpawnPoint has unexplained behavior issues
 
-    //current health level
-    private float currentHealthPoints = 100f;
+    //projectile speed and damage
+    [SerializeField] float  projectileSpeed = 10f;
+    [SerializeField] float  damagePerShot = 10f;
 
-    //reference to the player (external object)
-    GameObject player = null;
-   
-    //reference to AICharacterControl script attached to enemy
-    AICharacterControl CharacterControl = null;
-    
+    AICharacterControl CharacterControl = null;     //reference to AICharacterControl script attached to enemy
+    GameObject player = null;     //reference to the player (external object)
+    private float currentHealthPoints = 100f; //current health level
+    [SerializeField] float maxHealthPoints = 100f;     //maximum player health
 
-    /**
-     * @brief: getter method to return current health level as a value between 0 and 1
-     */
     public float getHealthAsPercentage
     {
         get
@@ -49,14 +44,11 @@ public class Enemy : MonoBehaviour, IDamageable{
     void Update()
     {
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        //distance between player and THIS enemy
-
         if (distToPlayer <= triggerRadius)
         {
-            print("Enemy in attack phase");
-            //placeholder for attack method call
+            print(gameObject.name + " in attack phase");
+            attackPlayer();
         }
-
         if (distToPlayer <= moveRadius)
         {
             CharacterControl.SetTarget(player.transform); //sets player as target for AICharacterControl Script
@@ -67,6 +59,25 @@ public class Enemy : MonoBehaviour, IDamageable{
             CharacterControl.SetTarget(transform);
             //when the player goes far away from the enemy, the enemy stops and stays in position
         }
+    }
+
+    //Instantiates an attack projectile and assigns it a direction towards the player
+    void attackPlayer()
+    {
+
+        Vector3 position = transform.position;
+        position.y += 2;
+        Vector3 spawnPosition = position;
+
+        // GameObject newBall = Instantiate(projectileAttack, projectileSpawnPoint.transform.position, transform.rotation);  -> projectileSpawnPoint has unexplained behavior issues
+        GameObject newBall = Instantiate(projectileAttack, spawnPosition, transform.rotation);
+        Projectile proj = newBall.GetComponent<Projectile>();
+        proj.damageCaused = damagePerShot;
+
+        Vector3 unit = (player.transform.position - spawnPosition).normalized;
+       // Vector3 unit = (player.transform.position - projectileSpawnPoint.transform.position).normalized; -> projectileSpawnPoint has unexplained behavior issues
+        float projectileSpeed = proj.proSpeedValue;
+        newBall.GetComponent<Rigidbody>().velocity = unit * projectileSpeed;
     }
 
     public void TakeDamage(float damage)
