@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-public class Enemy : MonoBehaviour, IDamageable{
+public class Enemy : MonoBehaviour, IDamageableEnemy{
     //TODO: Fine tune range values for enemy stop and player AttackStop
 
     [SerializeField] float triggerRadius = 4f;  //enemy attacking range
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour, IDamageable{
 
         // GameObject newBall = Instantiate(projectileAttack, projectileSpawnPoint.transform.position, transform.rotation);  -> projectileSpawnPoint has unexplained behavior issues
         GameObject newBall = Instantiate(projectileAttack, spawnPosition, transform.rotation);
-        Projectile proj = newBall.GetComponent<Projectile>();
+        EnemyProjectile proj = newBall.GetComponent<EnemyProjectile>();
         proj.damageCaused = damagePerShot;
 
         Vector3 unit = (player.transform.position - spawnPosition).normalized;

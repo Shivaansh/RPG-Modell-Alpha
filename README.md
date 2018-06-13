@@ -16,3 +16,8 @@ Log June 9, 2018: Removed BridgegameObject and added a slope on the terrain (usi
 
 Loge June 13, 2018: Enemies now launch projectiles at the player when the player walks into the enemy attack radius. However, this implementation needs updating because
 the projectiles hit the enemy before hitting the player.
+
+Log June 14, 2018: instead of the IDamageable interface, I have now implemented two spinoffs: IDamageablePlayer and IDamageableEnemy. Also, I have created two new projectile spinoffs, PlayerProjectile and EnemyProjectile. These now ensure that player fired projectiles do not harm the player and same goes for the enemies.
+
+The projectile fired by player: PlayerProjectile. Player implements IDamageablePlayer
+The projectile fired by enemy: EnemyProjectile. Enemy implements IDamageableEnemy

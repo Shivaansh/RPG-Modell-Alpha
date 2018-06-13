@@ -1,4 +1,4 @@
-﻿public interface IDamageable
+﻿public interface IDamageableEnemy
 {
     void TakeDamage(float damage);
 }

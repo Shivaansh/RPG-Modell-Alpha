@@ -2726,10 +2726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerRadius: 4
-  moveRadius: 14
-  projectileAttack: {fileID: 1980156907988894, guid: 6eb933e61265fe345988e2e3d5feecf8,
-    type: 2}
-  projectileSpawnPoint: {fileID: 1642839470995272, guid: 4cf824722ca1aa94f8b5cc13e0b3cb2c,
+  moveRadius: 10
+  projectileAttack: {fileID: 1903253032055350, guid: 6b748163558032245be6cfd9c9a74091,
     type: 2}
   projectileSpeed: 10
   damagePerShot: 10
