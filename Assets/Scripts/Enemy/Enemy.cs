@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour, IDamageable{
 
         Vector3 position = transform.position;
         position.y += 2;
+        position.x += 0.7f;
         Vector3 spawnPosition = position;
 
         // GameObject newBall = Instantiate(projectileAttack, projectileSpawnPoint.transform.position, transform.rotation);  -> projectileSpawnPoint has unexplained behavior issues
