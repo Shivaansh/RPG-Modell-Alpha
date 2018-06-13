@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layerPriorities: 0900000008000000
-  clickPointImage: {fileID: 0}
 --- !u!114 &114801705797244364
 MonoBehaviour:
   m_ObjectHideFlags: 1

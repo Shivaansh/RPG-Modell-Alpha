@@ -21,5 +21,7 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
         //ensure that health stays between 0 and max, for the sake of robustness
+        if (currentHealthPoints <= 0) { Destroy(gameObject); } //kills the player when health reached 0
+        //TODO: add a load level statement to load death scene.
     }
 }

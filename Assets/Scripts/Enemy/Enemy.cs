@@ -12,14 +12,17 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
     [SerializeField] GameObject projectileAttack;     //reference to projectile prefab
    // [SerializeField] GameObject projectileSpawnPoint;     //reference to projectile spawn point (a prefab and a child of the Enemy)  -> projectileSpawnPoint has unexplained behavior issues
 
-    //projectile speed and damage
+    //projectile speed and damage, rate of fire
     [SerializeField] float  projectileSpeed = 10f;
     [SerializeField] float  damagePerShot = 10f;
+    [SerializeField] float timeBetnShot = 1.5f; //time (in seconds) between successive shots
 
     AICharacterControl CharacterControl = null;     //reference to AICharacterControl script attached to enemy
     GameObject player = null;     //reference to the player (external object)
     private float currentHealthPoints = 100f; //current health level
     [SerializeField] float maxHealthPoints = 100f;     //maximum player health
+    [SerializeField] float heightToFire = 1.3f; //height at which to shoot player, 2 seems good
+    bool isAttacking = false;
 
     public float getHealthAsPercentage
     {
@@ -44,10 +47,19 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
     void Update()
     {
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distToPlayer <= triggerRadius)
+        if (distToPlayer <= triggerRadius && !isAttacking)
         {
-            print(gameObject.name + " in attack phase");
-            attackPlayer();
+            //print(gameObject.name + " in attack phase");
+            isAttacking = true;
+            //attackPlayer();
+            InvokeRepeating("attackPlayer", 0f, timeBetnShot); //TODO: maybe switch to co-routines
+            //InvokeRepeating invokes methods by string name reference, params are method name, initial delay and subsequent delay
+        }
+        if(distToPlayer > triggerRadius)
+        {
+            CancelInvoke();
+           // isAttacking = false;
+            isAttacking = !isAttacking;
         }
         if (distToPlayer <= moveRadius)
         {
@@ -75,7 +87,9 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
         EnemyProjectile proj = newBall.GetComponent<EnemyProjectile>();
         proj.damageCaused = damagePerShot;
 
-        Vector3 unit = (player.transform.position - spawnPosition).normalized;
+        Vector3 pos = player.transform.position;
+        pos.y += heightToFire;
+        Vector3 unit = (pos - spawnPosition).normalized;
        // Vector3 unit = (player.transform.position - projectileSpawnPoint.transform.position).normalized; -> projectileSpawnPoint has unexplained behavior issues
         float projectileSpeed = proj.proSpeedValue;
         newBall.GetComponent<Rigidbody>().velocity = unit * projectileSpeed;
