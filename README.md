@@ -21,3 +21,5 @@ Log June 14, 2018: instead of the IDamageable interface, I have now implemented 
 
 The projectile fired by player: PlayerProjectile. Player implements IDamageablePlayer
 The projectile fired by enemy: EnemyProjectile. Enemy implements IDamageableEnemy
+
+Log June 15, 2018: Added some objects to the village and forest areas, made the bridge navigation compatible. USE THE NAVIGATION STATIC OPTION in the future.
