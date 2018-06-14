@@ -19,5 +19,6 @@ public class EnemyProjectile : MonoBehaviour {
         {
             (damagedComponent as IDamageablePlayer).TakeDamage(damageCaused);
         }
+        Destroy(gameObject);
     } 
 }

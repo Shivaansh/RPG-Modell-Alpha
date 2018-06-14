@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
     [SerializeField] float  damagePerShot = 10f;
     [SerializeField] float timeBetnShot = 1.5f; //time (in seconds) between successive shots
 
+    [SerializeField] Vector3 aimOffset = new Vector3(0, 1f, 0); //for melee attacks
+
     AICharacterControl CharacterControl = null;     //reference to AICharacterControl script attached to enemy
     GameObject player = null;     //reference to the player (external object)
     private float currentHealthPoints = 100f; //current health level
