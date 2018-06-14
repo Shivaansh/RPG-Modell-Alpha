@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
                 GameObject foe = raycastHit.collider.gameObject;
                 currentClickTarget = foe.transform.position;
                 aiControl.SetTarget(foe.transform);
+                //TODO :add player projectile attack with right/left click
                 break;
 
             case (walkableLayerIndex):

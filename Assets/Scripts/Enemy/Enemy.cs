@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Enemy : MonoBehaviour, IDamageableEnemy{
     //TODO: Fine tune range values for enemy stop and player AttackStop
-
+    
     [SerializeField] float triggerRadius = 4f;  //enemy attacking range
     [SerializeField] float moveRadius = 14f;    
 
