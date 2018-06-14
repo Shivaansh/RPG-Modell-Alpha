@@ -58,8 +58,8 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
         if(distToPlayer > triggerRadius)
         {
             CancelInvoke();
-           // isAttacking = false;
-            isAttacking = !isAttacking;
+            isAttacking = false;
+           // isAttacking = !isAttacking; -> using this statement prevents the enemy from attacking till it is itself attacked
         }
         if (distToPlayer <= moveRadius)
         {
@@ -98,6 +98,7 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
     public void TakeDamage(float damage)
     {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+        if (currentHealthPoints <= 0) { Destroy(gameObject); } //kills enemy when health reaches 0
     }
 
     private void OnDrawGizmos()
