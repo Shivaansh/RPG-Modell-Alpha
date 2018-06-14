@@ -1174,7 +1174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b324587c9ff84a4daba3aae8b774e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 150
+  enemyLayer: 9
+  playerDamagePerHit: 50
+  timeBetnhits: 0.5
+  meleeRange: 2
 --- !u!114 &114584829589118132
 MonoBehaviour:
   m_ObjectHideFlags: 1

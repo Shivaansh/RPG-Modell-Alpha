@@ -2597,11 +2597,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114175476041197332, guid: 6bb704cf97634954e865478cc8336daf,
-        type: 2}
-      propertyPath: maxHealthPoints
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
   m_IsPrefabParent: 0
