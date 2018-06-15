@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
         player = GameObject.FindGameObjectWithTag("Player"); //player variable retrieves the player from the scene
         //character control is the AI Character control script
         CharacterControl = GetComponent<AICharacterControl>();
+        currentHealthPoints = maxHealthPoints;
     }
 
     /*
@@ -80,8 +81,8 @@ public class Enemy : MonoBehaviour, IDamageableEnemy{
     {
 
         Vector3 position = transform.position;
-        position.y += 2;
-        position.x += 0.7f;
+        position.y += 3f;
+        position.x += 0f;
         Vector3 spawnPosition = position;
 
         // GameObject newBall = Instantiate(projectileAttack, projectileSpawnPoint.transform.position, transform.rotation);  -> projectileSpawnPoint has unexplained behavior issues
