@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2305e8278c8b342a883c3a5881459c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerRadius: 7
+  triggerRadius: 10
   moveRadius: 50
   projectileAttack: {fileID: 1903253032055350, guid: cb4dbebd54a6c8046ab644f0fb31e0cb,
     type: 2}
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   damagePerShot: -20
   timeBetnShot: 1
   aimOffset: {x: 0, y: 1, z: 0}
-  maxHealthPoints: 100
+  maxHealthPoints: 100000
   heightToFire: 1.3
 --- !u!114 &114903691225635272
 MonoBehaviour:
@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1.4
+  m_MoveSpeedMultiplier: 2.5
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
 --- !u!136 &136871224720058754
