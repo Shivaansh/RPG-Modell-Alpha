@@ -26,3 +26,4 @@ Log June 15, 2018: Added some objects to the village and forest areas, made the 
 Link to demo: https://youtu.be/HtwSQowXeHk  (as of progress upto lecture 60)
 
 Log june 16, 2018: Started work on stat sheet for player and enemy attributes. Link here -> https://docs.google.com/spreadsheets/d/1xpPusDjEatUJLLt8BOa7suODnX1R7NMYPWJ6uducxGc/edit?usp=sharing
+Playable Demo Video -> https://youtu.be/rNYqGTAujp0
