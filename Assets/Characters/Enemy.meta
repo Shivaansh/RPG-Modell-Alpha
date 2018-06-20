@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: 4dd207f97cad3fc4a9016f94c96ed946
-labels:
-- Architecture
+guid: 362dcff11deac434d85b8d0cc3edde3c
 folderAsset: yes
-timeCreated: 1527780324
+timeCreated: 1529531996
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
