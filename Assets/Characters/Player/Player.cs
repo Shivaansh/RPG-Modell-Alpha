@@ -12,6 +12,12 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     [SerializeField] float timeBetnhits = 1f;
     [SerializeField] float meleeRange = 2f;
     [SerializeField] Weapon weapon1;
+    [SerializeField] Weapon weapon2; //alternate weapon
+    [SerializeField] GameObject weaponSocket;
+    
+
+    bool w1; //is the primary weapon active?
+    bool w2; //is the secondary weapon active?
 
     float lastHitTime = 0f;
 
@@ -26,8 +32,54 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     {
         registerLeftClick();
         currentHealthPoints = maxHealthPoints;
-        var weaponPref = weapon1.getPrefab();
-        var weapon = Instantiate(weaponPref); //put in correct position
+        instantiateWeapon(weapon1); 
+        w1 = true; //sets primary  weapon active condition to true
+
+    }
+
+    void Update()
+    {
+        //if 2 is pressed and the primary weapon is currently equipped
+        //equip the secondary weapon and remove primary weapon
+        if ((Input.GetKeyDown(KeyCode.Alpha2)) && w1 == true)
+        {
+            instantiateWeapon(weapon2); //equip secondary
+            destroyWeapon(weapon1); //destroy primary
+            w1 = false; //primary not equipped
+            w2 = true; //secondary equipped
+        }
+
+        //if 1 is pressed and the secondary weapon is currently equipped
+        //equip the primary weapon and remove secondary weapon
+        if ((Input.GetKeyDown(KeyCode.Alpha1)) && w2 == true)
+        {
+            instantiateWeapon(weapon1); //equip primary
+            destroyWeapon(weapon2); //destroy secondary
+            
+            w1 = true; //primary equipped
+            w2 = false; //secondary not equipped
+        }
+
+        //TODO test the contents of this Update() method
+        //test result: new weapon appears but first does not disappear
+        //This si because separate local methods are used to create and destroy weapons. So a weapon instantiated by one method is not referenced by another method.
+        //TODO : fix weapon destroy method by refencing variables (maybe make global in the scope of this class?)
+    
+    }
+
+    private void instantiateWeapon(Weapon wep)
+    {
+        var weaponPrefToCreate = wep.getPrefab();
+        var weapon = Instantiate(weaponPrefToCreate, weaponSocket.transform);
+        //weapon = Instantiate(weaponPrefToCreate, weaponSocket.transform);
+        weapon.transform.localPosition = wep.gripPos.localPosition; //sets weapon instantiate point to left hand
+        weapon.transform.localRotation = wep.gripPos.localRotation;
+    }
+
+    private void destroyWeapon(Weapon wep)
+    {
+        var weaponPrefToDestroy = wep.getPrefab();
+        Destroy(weaponPrefToDestroy);
     }
 
     private void registerLeftClick()

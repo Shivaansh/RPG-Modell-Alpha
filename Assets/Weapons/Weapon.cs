@@ -6,6 +6,7 @@ using UnityEngine;
 public class Weapon : ScriptableObject { //MonoBehaviour { -> ScriptableObject inherits
                                          //directly from object
 
+    public Transform gripPos;
     [SerializeField] GameObject weaponPrefab;
     [SerializeField] AnimationClip attackAimation;
 
