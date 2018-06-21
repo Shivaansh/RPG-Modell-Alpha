@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour, IDamageablePlayer {
 
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     [SerializeField] float meleeRange = 2f;
     [SerializeField] Weapon weapon1;
     [SerializeField] Weapon weapon2; //alternate weapon
-    [SerializeField] GameObject weaponSocket;
+    //[SerializeField] GameObject weaponSocket;
     
 
     bool w1; //is the primary weapon active?
@@ -68,12 +69,26 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     }
 
     private void instantiateWeapon(Weapon wep)
+
     {
+        GameObject weaponSocket = RequestDominantHand();
         var weaponPrefToCreate = wep.getPrefab();
         var weapon = Instantiate(weaponPrefToCreate, weaponSocket.transform);
         //weapon = Instantiate(weaponPrefToCreate, weaponSocket.transform);
         weapon.transform.localPosition = wep.gripPos.localPosition; //sets weapon instantiate point to left hand
         weapon.transform.localRotation = wep.gripPos.localRotation;
+    }
+
+    //return the dominant hand game object
+    private GameObject RequestDominantHand()
+    {
+        var dominantHands = GetComponentsInChildren<DominantHand>();
+        int numberOfDomHands = dominantHands.Length;
+        //assertions for 0 hands
+        Assert.IsFalse(numberOfDomHands <=  0, "No hand found, add one!");
+        Assert.IsFalse(numberOfDomHands > 1, "Multiple dominant hands? NOT POSSIBLE! Remove one!");
+
+        return dominantHands[0].gameObject; //return the dominant hand game object
     }
 
     private void destroyWeapon(Weapon wep)
