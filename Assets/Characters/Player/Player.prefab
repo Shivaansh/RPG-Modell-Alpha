@@ -238,7 +238,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4603662318465466}
-  - component: {fileID: 114317809855490570}
   m_Layer: 0
   m_Name: Hand_L
   m_TagString: Untagged
@@ -254,6 +253,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4565753662280318}
+  - component: {fileID: 114181833264356078}
   m_Layer: 0
   m_Name: Hand_R
   m_TagString: Untagged
@@ -690,13 +690,12 @@ MonoBehaviour:
   meleeRange: 2
   weapon1: {fileID: 11400000, guid: cf6b362e7f942a1479104dfc18b7026d, type: 2}
   weapon2: {fileID: 11400000, guid: 0df9720956396f445b85e2bcb0404fc6, type: 2}
-  weaponSocket: {fileID: 1512891478968360}
---- !u!114 &114317809855490570
+--- !u!114 &114181833264356078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1512891478968360}
+  m_GameObject: {fileID: 1524647394963098}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f27ddc694ac9720478ae94f7f23af0ed, type: 3}
