@@ -7,9 +7,6 @@ Log May 31, 2018: I have updated the assets (mostly the models of houses and oth
 
 As of this push, all the models in the current scene are NOT in their final location/orientation/size and have simply been placed for testing purposes.
 
-Log June 4, 2018: Currently at lecture 46 of section 2 of the course. Due to an error I am trying to get to the bottom of, I am currently sticking to the pre-existing Raycasting system, and am NOT implementing content from lectures 46 to 48. This will, however, be done when I am using new layers, probably after completing the course. 
-I may be adding a new branch to this repo, one with and one without the new raycasting system. As of today, this branch does NOT reflect the content from lectures 46 to 48. This content includes Player pathfinding, which will be implemented once a playable demo is achieved.
-
 Log June 7, 2018: Implemented the new Raycasting system and Player Pathfinding systems. Next Step: Fix planes and structures to work with navmesh (consider tilting plane to 60 degrees, or maybe implement a lift).
 
 Log June 9, 2018: Removed BridgegameObject and added a slope on the terrain (using the smooth height tool), baked new NavMesh which now allows player to go up and down the house. NOTE: Should use the paint trees tool to create the forest.
