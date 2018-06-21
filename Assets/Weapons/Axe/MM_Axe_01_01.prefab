@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - component: {fileID: 424880}
   - component: {fileID: 20547192}
+  - component: {fileID: 65464775358254300}
+  - component: {fileID: 65438969409135054}
   m_Layer: 0
   m_Name: MM_Axe_01_01
   m_TagString: Untagged
@@ -74,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.394642, y: 15.079699, z: -114.79402}
+  m_LocalPosition: {x: 23.55, y: 18, z: -117.69}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 470434}
@@ -281,3 +283,27 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112616}
   m_IsPrefabParent: 1
+--- !u!65 &65438969409135054
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 0.03, z: 0.18}
+  m_Center: {x: 0.61, y: 0, z: 0.09}
+--- !u!65 &65464775358254300
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.05, z: 0.05}
+  m_Center: {x: 0.45, y: 0, z: 0}

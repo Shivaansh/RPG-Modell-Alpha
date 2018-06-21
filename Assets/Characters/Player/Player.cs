@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, IDamageablePlayer {
     [SerializeField] float playerDamagePerHit = 90f;
     [SerializeField] float timeBetnhits = 1f;
     [SerializeField] float meleeRange = 2f;
+    [SerializeField] Weapon weapon1;
 
     float lastHitTime = 0f;
 
@@ -23,12 +24,19 @@ public class Player : MonoBehaviour, IDamageablePlayer {
 
     void Start()
     {
-        camCaster = FindObjectOfType<CameraRaycaster>();
-        camCaster.notifyMouseClickObservers += onMouseClick;
+        registerLeftClick();
         currentHealthPoints = maxHealthPoints;
+        var weaponPref = weapon1.getPrefab();
+        var weapon = Instantiate(weaponPref); //put in correct position
     }
 
-     void onMouseClick(RaycastHit raycastHit, int layerHit)
+    private void registerLeftClick()
+    {
+        camCaster = FindObjectOfType<CameraRaycaster>();
+        camCaster.notifyMouseClickObservers += onMouseClick;
+    }
+
+    void onMouseClick(RaycastHit raycastHit, int layerHit)
     {
         if (layerHit == enemyLayer) //if the layer hit by ray has same index as enemy layer
         {

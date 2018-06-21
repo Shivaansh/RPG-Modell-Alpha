@@ -6788,14 +6788,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4228972314501820, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.3000008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228972314501820, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.3000008
-      objectReference: {fileID: 0}
+    - target: {fileID: 114175476041197332, guid: 6bb704cf97634954e865478cc8336daf,
+        type: 2}
+      propertyPath: weapon1
+      value: 
+      objectReference: {fileID: 11400000, guid: cf6b362e7f942a1479104dfc18b7026d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
   m_IsPrefabParent: 0
