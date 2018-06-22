@@ -25,4 +25,4 @@ Link to demo: https://youtu.be/HtwSQowXeHk  (as of progress upto lecture 60)
 Log june 16, 2018: Started work on stat sheet for player and enemy attributes. Link here -> https://docs.google.com/spreadsheets/d/1xpPusDjEatUJLLt8BOa7suODnX1R7NMYPWJ6uducxGc/edit?usp=sharing
 Playable Demo Video -> https://youtu.be/rNYqGTAujp0
 
-Log June 21, 2018: Added some grass and water to the terrain for testing. Will add full coverage (including trees) once city design is fully mapped out. (TODO?) Create an asset demo scene.
+Log June 21, 2018: Added some grass and water to the terrain for testing. Will add full coverage (including trees) once city design is fully mapped out. (TODO?) Create an asset demo scene. SECTION 2 COMPLETE
