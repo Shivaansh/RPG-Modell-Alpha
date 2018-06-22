@@ -26,3 +26,6 @@ Log june 16, 2018: Started work on stat sheet for player and enemy attributes. L
 Playable Demo Video -> https://youtu.be/rNYqGTAujp0
 
 Log June 21, 2018: Added some grass and water to the terrain for testing. Will add full coverage (including trees) once city design is fully mapped out. (TODO?) Create an asset demo scene. SECTION 2 COMPLETE
+
+Log June 22, 2018: Build Known Errors: Grass rendering needs to be improved.
+Animations and sounds to be added. Navmesh behaves erratically close to the castle.
