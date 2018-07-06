@@ -492,6 +492,26 @@ Prefab:
       propertyPath: m_Name
       value: MiddleEarth
       objectReference: {fileID: 0}
+    - target: {fileID: 218797262334116512, guid: be4e0b7e4fdc32a4cbba7cd908a59a22,
+        type: 2}
+      propertyPath: m_TreeDistance
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 218797262334116512, guid: be4e0b7e4fdc32a4cbba7cd908a59a22,
+        type: 2}
+      propertyPath: m_TreeBillboardDistance
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 218797262334116512, guid: be4e0b7e4fdc32a4cbba7cd908a59a22,
+        type: 2}
+      propertyPath: m_DetailObjectDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 218797262334116512, guid: be4e0b7e4fdc32a4cbba7cd908a59a22,
+        type: 2}
+      propertyPath: m_DetailObjectDensity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be4e0b7e4fdc32a4cbba7cd908a59a22, type: 2}
   m_IsPrefabParent: 0

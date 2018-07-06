@@ -29,3 +29,18 @@ Log June 21, 2018: Added some grass and water to the terrain for testing. Will a
 
 Log June 22, 2018: Build Known Errors: Grass rendering needs to be improved.
 Animations and sounds to be added. Navmesh behaves erratically close to the castle.
+
+
+
+
+/**************** LIST OF FEATURES TO ADD
+
+1) Moveable Camera (using WASD buttons and R to reset)
+
+2) Dynamic weather conditions
+
+3) Damage values and number based health bar
+
+
+
+***********/

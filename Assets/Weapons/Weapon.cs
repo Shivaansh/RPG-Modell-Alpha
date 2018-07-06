@@ -8,7 +8,7 @@ public class Weapon : ScriptableObject { //MonoBehaviour { -> ScriptableObject i
 
     public Transform gripPos;
     [SerializeField] GameObject weaponPrefab;
-    [SerializeField] AnimationClip attackAimation;
+    [SerializeField] AnimationClip attackAnimation;
 
 	//// Use this for initialization
 	//void Start () {
