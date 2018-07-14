@@ -30,6 +30,7 @@ Log June 21, 2018: Added some grass and water to the terrain for testing. Will a
 Log June 22, 2018: Build Known Errors: Grass rendering needs to be improved.
 Animations and sounds to be added. Navmesh behaves erratically close to the castle.
 
+Log July 14, 2018: Added namespaces RPG.CameraUI and RPG.Character
 
 
 
