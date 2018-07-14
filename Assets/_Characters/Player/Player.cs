@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using RPG.CameraUI; //TODO Consider rewiring, we may not want this dependency to exist
+using RPG.Weapons;
 namespace RPG.Character
 {
     public class Player : MonoBehaviour, IDamageablePlayer
