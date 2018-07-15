@@ -3579,33 +3579,10 @@ Prefab:
       propertyPath: m_Name
       value: Healer Drone
       objectReference: {fileID: 0}
-    - target: {fileID: 4283848962130816, guid: f0271b8da25dde34a94449f78e8a3e82, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4283848962130816, guid: f0271b8da25dde34a94449f78e8a3e82, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136871224720058754, guid: f0271b8da25dde34a94449f78e8a3e82,
+    - target: {fileID: 195298691400619840, guid: f0271b8da25dde34a94449f78e8a3e82,
         type: 2}
-      propertyPath: m_Height
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136871224720058754, guid: f0271b8da25dde34a94449f78e8a3e82,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136871224720058754, guid: f0271b8da25dde34a94449f78e8a3e82,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136871224720058754, guid: f0271b8da25dde34a94449f78e8a3e82,
-        type: 2}
-      propertyPath: m_Direction
-      value: 0
+      propertyPath: m_StoppingDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0271b8da25dde34a94449f78e8a3e82, type: 2}

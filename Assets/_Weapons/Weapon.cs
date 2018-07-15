@@ -31,7 +31,14 @@ namespace RPG.Weapons
         //getter method to return the animation clip associated with the weapon
         public AnimationClip getAttackAnimClip()
         {
+            removeAnimationEvents(); 
             return attackAnimation;
+        }
+
+        //clears animation event list, so that asset packs cannot create errors
+        private void removeAnimationEvents()
+        {
+            attackAnimation.events = new AnimationEvent[0]; //set animation event list to an array of size 0
         }
     }
 }
