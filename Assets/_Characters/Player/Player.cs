@@ -19,6 +19,7 @@ namespace RPG.Character
         [SerializeField] Weapon weapon1;
         [SerializeField] Weapon weapon2; //alternate weapon
                                          //[SerializeField] GameObject weaponSocket;
+        [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controller
 
 
         bool w1; //is the primary weapon active?
@@ -36,10 +37,25 @@ namespace RPG.Character
         void Start()
         {
             registerLeftClick();
-            currentHealthPoints = maxHealthPoints;
+            initializeHealthSetup();
             instantiateWeapon(weapon1);
             w1 = true; //sets primary  weapon active condition to true
+            overrideAnimatorController();
 
+        }
+
+        private void initializeHealthSetup()
+        {
+            currentHealthPoints = maxHealthPoints;
+        }
+
+        //overrides the animation for the animation controlller at runtime 
+        private void overrideAnimatorController()
+        {
+            var animator = GetComponent<Animator>();  //animtor component reference
+            animator.runtimeAnimatorController = animOController; //reference to the serialized animator override controller
+            animOController["DEFAULT ATTACK"] = weapon1.getAttackAnimClip(); //maybe remove constant
+           // throw new NotImplementedException();
         }
 
         void Update()

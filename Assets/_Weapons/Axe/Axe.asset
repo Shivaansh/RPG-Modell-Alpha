@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gripPos: {fileID: 4259381760500334, guid: 4b7f237404a56e74ea060ef4c6164366, type: 2}
   weaponPrefab: {fileID: 112616, guid: c5191515b67d6b441822ed2abe96c612, type: 2}
-  attackAimation: {fileID: 0}
+  attackAnimation: {fileID: 7400000, guid: 3414c515c6a2f334da03b4ab3d547691, type: 3}
