@@ -689,8 +689,8 @@ MonoBehaviour:
   timeBetnhits: 0.5
   meleeRange: 2
   weaponList:
-  - {fileID: 11400000, guid: cf6b362e7f942a1479104dfc18b7026d, type: 2}
-  - {fileID: 11400000, guid: 0df9720956396f445b85e2bcb0404fc6, type: 2}
+  - {fileID: 11400000, guid: 4e61b687c02039b4b82962a63e99b5c9, type: 2}
+  - {fileID: 11400000, guid: 0b927802fb2e34e42ad65310c8eb388e, type: 2}
   animOController: {fileID: 22100000, guid: 6d0440119db2aad49b99b16ea3ae3747, type: 2}
 --- !u!114 &114181833264356078
 MonoBehaviour:

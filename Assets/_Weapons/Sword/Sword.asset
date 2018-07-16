@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b8e4072ded569479562e43b5abbc2b, type: 3}
-  m_Name: Axe
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  gripPos: {fileID: 4259381760500334, guid: 4b7f237404a56e74ea060ef4c6164366, type: 2}
-  weaponPrefab: {fileID: 112616, guid: c5191515b67d6b441822ed2abe96c612, type: 2}
-  attackAnimation: {fileID: 7400000, guid: 91784112ca001e74bbc86bbbe8199e56, type: 3}
+  gripPos: {fileID: 4772143999309490, guid: 97ff76e6b213cf74ea6093c89b2dadcc, type: 2}
+  weaponPrefab: {fileID: 1572796234540958, guid: ce3e2b5c71337264094bf1c497d10956,
+    type: 2}
+  attackAnimation: {fileID: 7400000, guid: 7b5b17e2d42e0424f9c36012595dc9b6, type: 3}

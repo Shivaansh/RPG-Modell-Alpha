@@ -61,7 +61,8 @@ namespace RPG.Character
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
 
-                DestroyImmediate(activeWeapon, true); //destroy primary
+                // DestroyImmediate(activeWeapon, true); //destroy primary
+                destroyWeapon(activeWeapon); //not working
                 activeWeapon = weaponList[1]; //make secondary primary
                 instantiateWeapon(activeWeapon);//equip secondary
             }
@@ -71,7 +72,8 @@ namespace RPG.Character
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
 
-                DestroyImmediate(activeWeapon, true); //destroy primary
+                // DestroyImmediate(activeWeapon, true); //destroy primary
+                destroyWeapon(activeWeapon);
                 activeWeapon = weaponList[0]; //make secondary primary
                 instantiateWeapon(activeWeapon);//equip secondary
             }
