@@ -32,6 +32,8 @@ Animations and sounds to be added. Navmesh behaves erratically close to the cast
 
 Log July 14, 2018: Added namespaces RPG.CameraUI and RPG.Character
 
+Log July 16, 2018: Instead of having different weapons for the player, an array of weapons has been created. Instantiating different weapons works, but I need to figure out a way to make the old weapon disappear.
+
 
 
 /**************** LIST OF FEATURES TO ADD
