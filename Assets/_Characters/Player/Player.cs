@@ -16,14 +16,10 @@ namespace RPG.Character
         [SerializeField] float playerDamagePerHit = 90f;
         [SerializeField] float timeBetnhits = 1f;
         [SerializeField] float meleeRange = 2f;
-        [SerializeField] Weapon weapon1;
-        [SerializeField] Weapon weapon2; //alternate weapon
-                                         //[SerializeField] GameObject weaponSocket;
+        Weapon activeWeapon;
+        [SerializeField] Weapon[] weaponList = new Weapon[2];
+        //[SerializeField] Weapon weapon2; //alternate weapon
         [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controller
-
-
-        bool w1; //is the primary weapon active?
-        bool w2; //is the secondary weapon active?
 
         float lastHitTime = 0f;
 
@@ -36,10 +32,10 @@ namespace RPG.Character
 
         void Start()
         {
+            activeWeapon = weaponList[0];
             registerLeftClick();
             initializeHealthSetup();
-            instantiateWeapon(weapon1);
-            w1 = true; //sets primary  weapon active condition to true
+            instantiateWeapon(activeWeapon);
             overrideAnimatorController();
 
         }
@@ -54,31 +50,30 @@ namespace RPG.Character
         {
             var animator = GetComponent<Animator>();  //animtor component reference
             animator.runtimeAnimatorController = animOController; //reference to the serialized animator override controller
-            animOController["DEFAULT ATTACK"] = weapon1.getAttackAnimClip(); //maybe remove constant
-           // throw new NotImplementedException();
+            animOController["DEFAULT ATTACK"] = activeWeapon.getAttackAnimClip(); //maybe remove constant
+                                                                                  // throw new NotImplementedException();
         }
 
         void Update()
         {
             //if 2 is pressed and the primary weapon is currently equipped
             //equip the secondary weapon and remove primary weapon
-            if ((Input.GetKeyDown(KeyCode.Alpha2)) && w1 == true)
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                instantiateWeapon(weapon2); //equip secondary
-                destroyWeapon(weapon1); //destroy primary
-                w1 = false; //primary not equipped
-                w2 = true; //secondary equipped
+
+                DestroyImmediate(activeWeapon, true); //destroy primary
+                activeWeapon = weaponList[1]; //make secondary primary
+                instantiateWeapon(activeWeapon);//equip secondary
             }
 
             //if 1 is pressed and the secondary weapon is currently equipped
             //equip the primary weapon and remove secondary weapon
-            if ((Input.GetKeyDown(KeyCode.Alpha1)) && w2 == true)
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                instantiateWeapon(weapon1); //equip primary
-                destroyWeapon(weapon2); //destroy secondary
 
-                w1 = true; //primary equipped
-                w2 = false; //secondary not equipped
+                DestroyImmediate(activeWeapon, true); //destroy primary
+                activeWeapon = weaponList[0]; //make secondary primary
+                instantiateWeapon(activeWeapon);//equip secondary
             }
 
             //TODO test the contents of this Update() method
