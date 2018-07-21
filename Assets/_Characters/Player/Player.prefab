@@ -685,8 +685,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 150
   enemyLayer: 9
-  playerDamagePerHit: 50
-  timeBetnhits: 0.5
+  playerDamagePerHit: 90
+  timeBetnhits: 1
   meleeRange: 2
   weaponList:
   - {fileID: 11400000, guid: 4e61b687c02039b4b82962a63e99b5c9, type: 2}
