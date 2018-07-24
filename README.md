@@ -47,3 +47,9 @@ Log July 16, 2018: Instead of having different weapons for the player, an array 
 
 
 ***********/
+
+/****************BUGS TO FIX
+
+1. part of navmesh near the castle bridge is broken. It reduces the movement speed of the healer drone. 
+
+**************/

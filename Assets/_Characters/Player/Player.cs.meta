@@ -5,7 +5,8 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - animOController: {fileID: 22100000, guid: 6d0440119db2aad49b99b16ea3ae3747, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
