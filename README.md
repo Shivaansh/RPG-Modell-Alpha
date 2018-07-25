@@ -34,6 +34,8 @@ Log July 14, 2018: Added namespaces RPG.CameraUI and RPG.Character
 
 Log July 16, 2018: Instead of having different weapons for the player, an array of weapons has been created. Instantiating different weapons works, but I need to figure out a way to make the old weapon disappear.
 
+Log July 25, 2018: Animations added to weapons, need to make two fields in Player.cs weapon properties (add to Weapon.cs and use getters).
+
 
 
 /**************** LIST OF FEATURES TO ADD

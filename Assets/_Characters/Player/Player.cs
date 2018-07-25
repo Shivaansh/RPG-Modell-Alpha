@@ -14,16 +14,16 @@ namespace RPG.Character
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] int enemyLayer = 9;
         [SerializeField] float playerDamagePerHit = 90f;
-        [SerializeField] float timeBetnhits = 1f;
-        [SerializeField] float meleeRange = 2f;
+        [SerializeField] float timeBetnhits = 1f; //TODO consider making these weapons properties
+        [SerializeField] float meleeRange = 2f; //and using getters to reference values in Player.cs
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
+        [SerializeField] int startWeapon = 0; //only for testing purposes, remove when weapon switching is enabled.
         //[SerializeField] Weapon weapon2; //alternate weapon
         [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controller
-
+        Animator animator;
         float lastHitTime = 0f;
 
-        GameObject currentTarget; //reference to enemy
         CameraRaycaster camCaster;
 
         //current health level
@@ -32,12 +32,11 @@ namespace RPG.Character
 
         void Start()
         {
-            activeWeapon = weaponList[0];
+            activeWeapon = weaponList[startWeapon];
             registerLeftClick();
             initializeHealthSetup();
             instantiateWeapon(activeWeapon);
-            overrideAnimatorController();
-
+            setupAnimator();
         }
 
         private void initializeHealthSetup()
@@ -46,15 +45,20 @@ namespace RPG.Character
         }
 
         //overrides the animation for the animation controlller at runtime 
-        private void overrideAnimatorController()
+        private void setupAnimator()
         {
-            var animator = GetComponent<Animator>();  //animtor component reference
+            animator = GetComponent<Animator>();  //animator component reference
             animator.runtimeAnimatorController = animOController; //reference to the serialized animator override controller
             animOController["DEFAULT ATTACK"] = activeWeapon.getAttackAnimClip(); //maybe remove constant
                                                                                   // throw new NotImplementedException();
         }
 
         void Update()
+        {
+            weaponSwitch();
+        }
+
+        private void weaponSwitch()
         {
             //TODO implement weapon switching
             //if 2 is pressed and the primary weapon is currently equipped
@@ -63,7 +67,7 @@ namespace RPG.Character
             {
 
                 // DestroyImmediate(activeWeapon, true); //destroy primary
-               // destroyWeapon(activeWeapon); //not working
+                // destroyWeapon(activeWeapon); //not working
                 activeWeapon = weaponList[1]; //make secondary primary
                 instantiateWeapon(activeWeapon);//equip secondary
             }
@@ -83,7 +87,6 @@ namespace RPG.Character
             //test result: new weapon appears but first does not disappear
             //This si because separate local methods are used to create and destroy weapons. So a weapon instantiated by one method is not referenced by another method.
             //TODO : fix weapon destroy method by refencing variables (maybe make global in the scope of this class?)
-
         }
 
         private void instantiateWeapon(Weapon wep)
@@ -126,18 +129,30 @@ namespace RPG.Character
             if (layerHit == enemyLayer) //if the layer hit by ray has same index as enemy layer
             {
                 var enemy = raycastHit.collider.gameObject; //enemy now holds the enemy gameObject
-                                                            //print("Clicked on enemy");
-                currentTarget = enemy;
-                float attackDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                var enemyComponent = enemy.GetComponent<Enemy>();
-
-
-                if (Time.time - lastHitTime > timeBetnhits && attackDistance <= meleeRange)
-                {
-                    enemyComponent.TakeDamage(playerDamagePerHit);
-                    lastHitTime = Time.time;
-                }
+                var enemyComponent = enemy.GetComponent<Enemy>(); //gets the Enemy (script) component from the current enemy GameObject
+                attackTarget(enemy, enemyComponent);
             }
+        }
+
+        private void attackTarget(GameObject target, Enemy targetComponent)
+        {
+            if (isTimerReset() && isTargetInRange(target)) // when time elapsed since last hit is greater than time between hits, and attack distance is less than melee range
+            {
+                animator.SetTrigger("AxeSwing");//trigger attack animation, string reference is name of trigger in the animator
+                targetComponent.TakeDamage(playerDamagePerHit); //damage the enemy
+                lastHitTime = Time.time; //set time of last hit to current time
+            }
+        }
+
+        private bool isTimerReset()
+        {
+            return (Time.time - lastHitTime) > timeBetnhits; //returns true if time since last hit is more than time between hits
+        }
+
+        private bool isTargetInRange(GameObject enemy)
+        {
+            float distanceToTarget = Vector3.Distance(transform.position, enemy.transform.position); //the distance between player and enemy at time of attacking
+            return distanceToTarget <= meleeRange;
         }
 
         /**
