@@ -55,3 +55,10 @@ Log July 25, 2018: Animations added to weapons, need to make two fields in Playe
 1. part of navmesh near the castle bridge is broken. It reduces the movement speed of the healer drone. 
 
 **************/
+
+
+/**************** NOTES
+
+Axe hit animation time: 1.6s -> Consider making axe time between hits 1.6 seconds, adjust damage accordingly
+
+********/
