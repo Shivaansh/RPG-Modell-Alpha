@@ -48,4 +48,7 @@ public class AudioTrigger : MonoBehaviour
         Gizmos.color = new Color(0, 255f, 0, .5f);
         Gizmos.DrawWireSphere(transform.position, triggerRadius);
     }
+
+    //TODO need to add AudioTrigger to player for hittting enemies and 
+    //taking hits from enemies.
 }
