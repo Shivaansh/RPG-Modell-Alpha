@@ -46,6 +46,8 @@ Log July 25, 2018: Animations added to weapons, need to make two fields in Playe
 
 3) Damage values and number based health bar
 
+4) IMPORTANT: NEED TO MAP OUT LEVEL TO ADD DIALOGUE (Recorded/text?)
+
 
 
 ***********/
