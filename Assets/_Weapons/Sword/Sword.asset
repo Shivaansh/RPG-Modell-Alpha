@@ -15,3 +15,6 @@ MonoBehaviour:
   weaponPrefab: {fileID: 1572796234540958, guid: ce3e2b5c71337264094bf1c497d10956,
     type: 2}
   attackAnimation: {fileID: 7400000, guid: 7b5b17e2d42e0424f9c36012595dc9b6, type: 3}
+  timeBetnhits: 1.2
+  meleeRange: 1.5
+  DamagePerHit: 108

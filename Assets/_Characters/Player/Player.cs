@@ -13,9 +13,8 @@ namespace RPG.Character
         //maximum player health
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] int enemyLayer = 9;
-        [SerializeField] float playerDamagePerHit = 90f;
-        [SerializeField] float timeBetnhits = 1f; //TODO consider making these weapons properties
-        [SerializeField] float meleeRange = 2f; //and using getters to reference values in Player.cs
+        //[SerializeField] float playerDamagePerHit = 90f;
+        
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
         [SerializeField] int startWeapon = 0; //only for testing purposes, remove when weapon switching is enabled.
@@ -139,20 +138,20 @@ namespace RPG.Character
             if (isTimerReset() && isTargetInRange(target)) // when time elapsed since last hit is greater than time between hits, and attack distance is less than melee range
             {
                 animator.SetTrigger("AxeSwing");//trigger attack animation, string reference is name of trigger in the animator
-                targetComponent.TakeDamage(playerDamagePerHit); //damage the enemy
+                targetComponent.TakeDamage(activeWeapon.GetDamagePerHit()); //damage the enemy
                 lastHitTime = Time.time; //set time of last hit to current time
             }
         }
 
         private bool isTimerReset()
         {
-            return (Time.time - lastHitTime) > timeBetnhits; //returns true if time since last hit is more than time between hits
+            return (Time.time - lastHitTime) > activeWeapon.GetTimeBetnHits(); //returns true if time since last hit is more than time between hits
         }
 
         private bool isTargetInRange(GameObject enemy)
         {
             float distanceToTarget = Vector3.Distance(transform.position, enemy.transform.position); //the distance between player and enemy at time of attacking
-            return distanceToTarget <= meleeRange;
+            return distanceToTarget <= activeWeapon.GetMeleeRange();
         }
 
         /**

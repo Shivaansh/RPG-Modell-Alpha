@@ -13,6 +13,9 @@ namespace RPG.Weapons
         [SerializeField] GameObject weaponPrefab;
         [SerializeField] AnimationClip attackAnimation;
 
+        [SerializeField] float timeBetnhits = 1f; //TODO consider making these weapons properties
+        [SerializeField] float meleeRange = 2f; //and using getters to reference values in Player.cs
+        [SerializeField] float DamagePerHit = 90f;
         //// Use this for initialization
         //void Start () {
 
@@ -22,6 +25,22 @@ namespace RPG.Weapons
         //void Update () {
 
         //}
+
+        public float GetTimeBetnHits()
+        {
+            //take animation time into account
+            return timeBetnhits;
+        }
+
+        public float GetMeleeRange()
+        {
+            return meleeRange;
+        }
+
+        public float GetDamagePerHit()
+        {
+            return DamagePerHit;
+        }
 
         public GameObject getPrefab()
         {

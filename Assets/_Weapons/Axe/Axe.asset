@@ -14,3 +14,6 @@ MonoBehaviour:
   gripPos: {fileID: 4259381760500334, guid: 4b7f237404a56e74ea060ef4c6164366, type: 2}
   weaponPrefab: {fileID: 112616, guid: c5191515b67d6b441822ed2abe96c612, type: 2}
   attackAnimation: {fileID: 7400000, guid: 91784112ca001e74bbc86bbbe8199e56, type: 3}
+  timeBetnhits: 1.6
+  meleeRange: 2
+  DamagePerHit: 150
