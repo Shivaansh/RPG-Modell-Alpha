@@ -13,12 +13,10 @@ namespace RPG.Character
         //maximum player health
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] int enemyLayer = 9;
-        //[SerializeField] float playerDamagePerHit = 90f;
         
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
         [SerializeField] int startWeapon = 0; //only for testing purposes, remove when weapon switching is enabled.
-        //[SerializeField] Weapon weapon2; //alternate weapon
         [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controller
         Animator animator;
         float lastHitTime = 0f;

@@ -36,6 +36,8 @@ Log July 16, 2018: Instead of having different weapons for the player, an array 
 
 Log July 25, 2018: Animations added to weapons, need to make two fields in Player.cs weapon properties (add to Weapon.cs and use getters).
 
+Log July 27, 2018: New terrain created, trees added, detail added, need to improve quality of "Marketplace" and "Pond near village".
+
 
 
 /**************** LIST OF FEATURES TO ADD
