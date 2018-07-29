@@ -63,6 +63,5 @@ Log July 27, 2018: New terrain created, trees added, detail added, need to impro
 
 /**************** NOTES
 
-Axe hit animation time: 1.6s -> Consider making axe time between hits 1.6 seconds, adjust damage accordingly
 
 ********/
