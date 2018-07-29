@@ -4407,7 +4407,7 @@ MonoBehaviour:
   projectileAttack: {fileID: 1903253032055350, guid: 6b748163558032245be6cfd9c9a74091,
     type: 2}
   projectileSpeed: 5
-  damagePerShot: 60
+  damagePerShot: 70
   timeBetnShot: 3
   aimOffset: {x: 0, y: 1, z: 0}
   maxHealthPoints: 300

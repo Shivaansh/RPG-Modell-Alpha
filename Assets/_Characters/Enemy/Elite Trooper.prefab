@@ -597,15 +597,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135628556844960}
-  m_LocalRotation: {x: -0, y: -0.99960446, z: -0, w: 0.028123757}
-  m_LocalPosition: {x: 23.63, y: 5.51, z: 19.43}
+  m_LocalRotation: {x: -0, y: -0.9188422, z: -0, w: 0.39462516}
+  m_LocalPosition: {x: 149.33029, y: 1.45, z: -95.488914}
   m_LocalScale: {x: 1.5000002, y: 1.5, z: 1.5000002}
   m_Children:
   - {fileID: 4430407183459222}
   - {fileID: 4059645929636718}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 183.22299, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 226.485, z: 0}
 --- !u!4 &4666116003413696
 Transform:
   m_ObjectHideFlags: 1
@@ -796,10 +796,10 @@ MonoBehaviour:
   projectileAttack: {fileID: 1903253032055350, guid: 6b748163558032245be6cfd9c9a74091,
     type: 2}
   projectileSpeed: 50
-  damagePerShot: 40
+  damagePerShot: 70
   timeBetnShot: 1.5
   aimOffset: {x: 0, y: 1, z: 0}
-  maxHealthPoints: 300
+  maxHealthPoints: 350
   heightToFire: 1.3
 --- !u!136 &136862377744045612
 CapsuleCollider:
