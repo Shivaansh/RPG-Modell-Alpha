@@ -36,6 +36,11 @@ namespace RPG.Character
             setupAnimator();
         }
 
+        public float getHealthLevel()
+        {
+            return currentHealthPoints;
+        }
+
         private void initializeHealthSetup()
         {
             currentHealthPoints = maxHealthPoints;
