@@ -480,6 +480,25 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 450616, guid: 2f1d35023a410684195ebaff92d15273, type: 2}
   m_PrefabInternal: {fileID: 941971095}
+--- !u!1 &123926388 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1208303666614578, guid: 6bb704cf97634954e865478cc8336daf,
+    type: 2}
+  m_PrefabInternal: {fileID: 293493408}
+--- !u!114 &123926389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123926388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5785d32d9d8a2e49b17f96182b92840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBarImage: {fileID: 1464139878}
+  maxEnergypoints: 100
+  pointsPerCast: 15
 --- !u!1001 &128547893
 Prefab:
   m_ObjectHideFlags: 0
@@ -5233,6 +5252,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ab8633bfa2cdcf42a0fad58fa12ece2, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1464139878 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114483135325892798, guid: 75a43cca039264395b99698681e52275,
+    type: 2}
+  m_PrefabInternal: {fileID: 1684891654}
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &1502788059 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4134679964938896, guid: b8f5004b56301db47a88660861a93324,

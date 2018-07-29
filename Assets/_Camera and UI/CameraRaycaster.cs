@@ -30,6 +30,11 @@ using System.Collections.Generic;
         public delegate void OnClickPriorityLayer(RaycastHit raycastHit, int layerHit); // declare new delegate type
         public event OnClickPriorityLayer notifyMouseClickObservers; // instantiate an observer set
 
+        //new delegate system
+        public delegate void OnRightClick(RaycastHit raycastHit, int layerHit); // declare new delegate type
+        public event OnRightClick notifyRightClickObservers; // can only have one declaration of event type
+
+
 
         void Update()
         {
@@ -62,6 +67,13 @@ using System.Collections.Generic;
             if (Input.GetMouseButton(0)) //mouse click enquiry, not needed in PLayerMovement anymore
             {
                 notifyMouseClickObservers(priorityHit.Value, layerHit);
+            }
+
+            if (Input.GetMouseButtonDown(1)) //mouse click enquiry, not needed in PLayerMovement anymore
+            {
+                //energy attack to be executed
+                print("Energy blast discharged");
+                notifyRightClickObservers(priorityHit.Value, layerHit);
             }
         }
 
