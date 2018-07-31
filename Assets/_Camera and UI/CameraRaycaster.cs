@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Linq;
 using System.Collections.Generic;
+using RPG.Character; //for enemy detection
 
 
 /*
@@ -15,6 +16,9 @@ using System.Collections.Generic;
 {
     public class CameraRaycaster : MonoBehaviour
     {
+        //TODO remove CursorAffordances script
+        [SerializeField] Texture2D walkCursor = null; 
+
         // INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
         [SerializeField] int[] layerPriorities; //exposes the array in inspector
                                                 //layerType to be replaced with integer indexed layers

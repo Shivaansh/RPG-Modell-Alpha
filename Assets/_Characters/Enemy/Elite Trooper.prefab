@@ -799,7 +799,7 @@ MonoBehaviour:
   damagePerShot: 70
   timeBetnShot: 1.5
   aimOffset: {x: 0, y: 1, z: 0}
-  maxHealthPoints: 350
+  maxHealthPoints: 250
   heightToFire: 1.3
 --- !u!136 &136862377744045612
 CapsuleCollider:
@@ -830,9 +830,9 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: de617290e4a62e142a1077323b13ff94, type: 2}
   - {fileID: 2100000, guid: de617290e4a62e142a1077323b13ff94, type: 2}
-  - {fileID: 2100000, guid: e0459f3145339894c93f0fc8a5470fb6, type: 2}
+  - {fileID: 2100000, guid: f4cc6375036c9ce41b5f5227053b3171, type: 2}
   - {fileID: 2100000, guid: ebe1181a35e06d84a926788d07a61ef8, type: 2}
-  - {fileID: 2100000, guid: 1e0a6130f8bffe346aed528c12e8eda0, type: 2}
+  - {fileID: 2100000, guid: f4cc6375036c9ce41b5f5227053b3171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
