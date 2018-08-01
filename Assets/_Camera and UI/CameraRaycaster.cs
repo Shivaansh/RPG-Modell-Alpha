@@ -12,12 +12,10 @@ using RPG.Character; //for enemy detection
  * reads, thus reducing discrepancies and improving consistency.
  * 
  */
- namespace RPG.CameraUI
+namespace RPG.CameraUI
 {
     public class CameraRaycaster : MonoBehaviour
     {
-        //TODO remove CursorAffordances script
-        [SerializeField] Texture2D walkCursor = null; 
 
         // INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
         [SerializeField] int[] layerPriorities; //exposes the array in inspector
