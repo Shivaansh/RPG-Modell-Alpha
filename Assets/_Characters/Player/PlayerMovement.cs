@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.AI;
-//TODO: fix WASD = Click movement conflict
 using RPG.CameraUI; //TODO Consider rewiring, we may not want this dependency to exist
 
 namespace RPG.Character
@@ -19,10 +18,6 @@ namespace RPG.Character
         Vector3 currentClickTarget, clickPoint;
         GameObject runPoint;
 
-
-        const int walkableLayerIndex = 8; //coinst so that it works with switch statement
-        const int enemyLayerIndex = 9;
-
         bool isInDirectMode = false;
         //checks whether the game is set to Direct Movement ( WASD / Gamepad input) mode 
 
@@ -33,37 +28,30 @@ namespace RPG.Character
             currentClickTarget = transform.position;
             aiControl = GetComponent<AICharacterControl>(); //ai character control script identified and stored
             runPoint = new GameObject("runPoint");
-            cameraRaycaster.notifyMouseClickObservers += clickData;
+
+            cameraRaycaster.onMouseOverPotentiallyWalkable += OnMouseOverPotentiallyWalkable;
+            cameraRaycaster.onMouseOverEnemy += OnMouseOverEnemy;
+            //adding OnMouseOverPotentiallyWalkable to observer set, hence subscribed
         }
 
-        void clickData(RaycastHit raycastHit, int layerHit)
+
+        void OnMouseOverEnemy(Enemy enemy)
         {
-            print("Clicked!"); //check if click is detected
-
-            switch (layerHit)
+            if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(1)) //on left/right click
             {
-                case (enemyLayerIndex):
-                    //go to enemy
-                    GameObject foe = raycastHit.collider.gameObject;
-                    currentClickTarget = foe.transform.position;
-                    aiControl.SetTarget(foe.transform);
-                    //TODO :add player projectile attack with right/left click
-                    break;
-
-                case (walkableLayerIndex):
-                    //walk to point on map
-                    runPoint.transform.position = raycastHit.point;
-                    currentClickTarget = raycastHit.point;
-                    aiControl.SetTarget(runPoint.transform);
-
-                    break;
-
-                default:
-                    //print error message, stay in position
-                    print("invalid movement target");
-                    return;
+                aiControl.SetTarget(enemy.transform); //move to enemy
             }
+        }
+         
+         void OnMouseOverPotentiallyWalkable(Vector3 destination)
+        {
 
+            if (Input.GetMouseButton(0)) //on left clik
+            {
+                runPoint.transform.position = destination;
+                currentClickTarget = destination;
+                aiControl.SetTarget(runPoint.transform); //move to click target
+            }
         }
 
         private void OnDrawGizmos()

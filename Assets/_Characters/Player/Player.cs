@@ -12,7 +12,6 @@ namespace RPG.Character
 
         //maximum player health
         [SerializeField] float maxHealthPoints = 100f;
-        [SerializeField] int enemyLayer = 9;
         
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
@@ -123,22 +122,21 @@ namespace RPG.Character
         private void registerLeftClick()
         {
             camCaster = FindObjectOfType<CameraRaycaster>();
-            camCaster.notifyMouseClickObservers += onMouseClick;
+            camCaster.onMouseOverEnemy += OnMouseOverEnemy;
         }
 
-        void onMouseClick(RaycastHit raycastHit, int layerHit)
+        void OnMouseOverEnemy(Enemy enemy)
         {
-            if (layerHit == enemyLayer) //if the layer hit by ray has same index as enemy layer
+            if(Input.GetMouseButton(0) && isTargetInRange(enemy.gameObject))
             {
-                var enemy = raycastHit.collider.gameObject; //enemy now holds the enemy gameObject
-                var enemyComponent = enemy.GetComponent<Enemy>(); //gets the Enemy (script) component from the current enemy GameObject
-                attackTarget(enemy, enemyComponent);
+                attackTarget(enemy);
             }
         }
 
-        private void attackTarget(GameObject target, Enemy targetComponent)
+        private void attackTarget(Enemy targetComponent)
         {
-            if (isTimerReset() && isTargetInRange(target)) // when time elapsed since last hit is greater than time between hits, and attack distance is less than melee range
+            //maintain weapon fire rate
+            if (Time.time - lastHitTime > activeWeapon.GetTimeBetnHits()) // when time elapsed since last hit is greater than time between hits, and attack distance is less than melee range
             {
                 animator.SetTrigger("AxeSwing");//trigger attack animation, string reference is name of trigger in the animator
                 targetComponent.TakeDamage(activeWeapon.GetDamagePerHit()); //damage the enemy

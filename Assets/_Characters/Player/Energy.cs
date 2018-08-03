@@ -21,15 +21,23 @@ namespace RPG.Character
         {
             currentEnergyPoints = maxEnergypoints;
             rayCaster = Camera.main.GetComponent<CameraRaycaster>();
-            rayCaster.notifyRightClickObservers += ProcessRightClick;
+            rayCaster.onMouseOverEnemy += onRightClick;
         }
 
-        void ProcessRightClick(RaycastHit raycasthit, int layerHit)
+        void onRightClick(Enemy enemy)
         {
-            print("Right clicked");
+            if(Input.GetMouseButtonDown(1))
+            {
+                print("Right clicked");
+                updateEnergyLevel();
+                updateEnergyBar();
+            }
+        }
+
+        private void updateEnergyLevel()
+        {
             float newEnergyLevel = currentEnergyPoints - pointsPerCast;
             currentEnergyPoints = Mathf.Clamp(newEnergyLevel, 0, maxEnergypoints);
-            updateEnergyBar();
         }
 
         void updateEnergyBar()

@@ -50,6 +50,8 @@ Log July 27, 2018: New terrain created, trees added, detail added, need to impro
 
 4) IMPORTANT: NEED TO MAP OUT LEVEL TO ADD DIALOGUE (Recorded/text?)
 
+5) REfactor raycasting system? (Lecture 108 and 109)
+
 
 
 ***********/

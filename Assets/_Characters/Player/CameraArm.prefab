@@ -38,10 +38,10 @@ GameObject:
   - component: {fileID: 20213478521446376}
   - component: {fileID: 124981690279881784}
   - component: {fileID: 81692398746047948}
-  - component: {fileID: 114439308887421482}
   - component: {fileID: 114069870455965734}
+  - component: {fileID: 114565654511759616}
   m_Layer: 0
-  m_Name: SkyCamera
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   enemyCursor: {fileID: 2800000, guid: 89280b09f2188f44f89d21ab5f3f65dd, type: 3}
   unknownCursor: {fileID: 2800000, guid: e761d00bf13c11a40a148914dd803a42, type: 3}
   cursorHotpot: {x: 0, y: 0}
---- !u!114 &114439308887421482
+--- !u!114 &114565654511759616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,10 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377791598579462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02853f5d34bd8f429969ac34c466d07, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a48ddc7a69d41d43ab161d24f201e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   layerPriorities: 0900000008000000
+  testField: 10
 --- !u!114 &114801705797244364
 MonoBehaviour:
   m_ObjectHideFlags: 1
