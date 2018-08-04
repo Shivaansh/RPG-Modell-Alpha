@@ -17,7 +17,7 @@ namespace RPG.Character
 
         void Start()
         {
-
+            Debug.Log("Power attack behavior attached to " + gameObject.name);
         }
 
         void Update()

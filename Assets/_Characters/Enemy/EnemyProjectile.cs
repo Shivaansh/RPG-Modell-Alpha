@@ -13,7 +13,6 @@ public class EnemyProjectile : MonoBehaviour {
     private void OnTriggerEnter(Collider collider)
     {
         Component damagedComponent = collider.gameObject.GetComponent(typeof(IDamageablePlayer));
-        print("Projectile fired by ENEMY hit " + damagedComponent); //using IDamageable interface to identify object damaged
         //the damaged component should implement the IDamageable interface
         if (damagedComponent)
         {

@@ -2158,12 +2158,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 300
-  enemyLayer: 9
   weaponList:
   - {fileID: 11400000, guid: 4e61b687c02039b4b82962a63e99b5c9, type: 2}
   - {fileID: 11400000, guid: 0b927802fb2e34e42ad65310c8eb388e, type: 2}
   startWeapon: 1
   animOController: {fileID: 22100000, guid: 6d0440119db2aad49b99b16ea3ae3747, type: 2}
+  ability1: {fileID: 11400000, guid: 1bd2cbb62e900194f95f43704e8633d8, type: 2}
 --- !u!114 &114584829589118132
 MonoBehaviour:
   m_ObjectHideFlags: 1

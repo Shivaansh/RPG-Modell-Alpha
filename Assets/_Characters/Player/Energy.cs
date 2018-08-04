@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using RPG.CameraUI;
 
 namespace RPG.Character
 {
@@ -10,37 +9,29 @@ namespace RPG.Character
     public class Energy : MonoBehaviour
     {
 
-        [SerializeField] RawImage energyBarImage; //energy bar image
+        [SerializeField] RawImage energyBarImage = null; //energy bar image
         [SerializeField] float maxEnergypoints = 100f;
-        [SerializeField] float pointsPerCast = 15f;
-        CameraRaycaster rayCaster;
         float currentEnergyPoints;
 
-        // Use this for initialization
         void Start()
         {
             currentEnergyPoints = maxEnergypoints;
-            rayCaster = Camera.main.GetComponent<CameraRaycaster>();
-            rayCaster.onMouseOverEnemy += onRightClick;
         }
 
-        void onRightClick(Enemy enemy)
+        //return if a certain amount of energy is available
+        public bool isEnoughEnergyAvailable(float cost)
         {
-            if(Input.GetMouseButtonDown(1))
-            {
-                print("Right clicked");
-                updateEnergyLevel();
-                updateEnergyBar();
-            }
+            return cost < currentEnergyPoints;
         }
 
-        private void updateEnergyLevel()
+        public  void consumeEnergy(float cost)
         {
-            float newEnergyLevel = currentEnergyPoints - pointsPerCast;
+            float newEnergyLevel = currentEnergyPoints - cost;
             currentEnergyPoints = Mathf.Clamp(newEnergyLevel, 0, maxEnergypoints);
+            updateEnergyBar();
         }
 
-        void updateEnergyBar()
+        private void updateEnergyBar()
         {
             float xValue = -(getHealthAsPercentage() / 2f) - 0.5f;
             energyBarImage.uvRect = new Rect(xValue, 0f, 0.5f, 1f);
@@ -57,4 +48,3 @@ namespace RPG.Character
         }
     }
 }
-

@@ -20,6 +20,10 @@ namespace RPG.Character
         Animator animator;
         float lastHitTime = 0f;
 
+        //Temporary slot for ability
+        [SerializeField] SpecialAbilityConfig ability1;
+        
+
         CameraRaycaster camCaster;
 
         //current health level
@@ -33,6 +37,7 @@ namespace RPG.Character
             initializeHealthSetup();
             instantiateWeapon(activeWeapon);
             setupAnimator();
+            ability1.AddComponent(gameObject);
         }
 
         public float getHealthLevel()
@@ -56,42 +61,10 @@ namespace RPG.Character
 
         void Update()
         {
-            weaponSwitch();
-        }
-
-        private void weaponSwitch()
-        {
-            //TODO implement weapon switching
-            //if 2 is pressed and the primary weapon is currently equipped
-            //equip the secondary weapon and remove primary weapon
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-
-                // DestroyImmediate(activeWeapon, true); //destroy primary
-                // destroyWeapon(activeWeapon); //not working
-                activeWeapon = weaponList[1]; //make secondary primary
-                instantiateWeapon(activeWeapon);//equip secondary
-            }
-
-            //if 1 is pressed and the secondary weapon is currently equipped
-            //equip the primary weapon and remove secondary weapon
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-
-                // DestroyImmediate(activeWeapon, true); //destroy primary
-                //destroyWeapon(activeWeapon);
-                activeWeapon = weaponList[0]; //make secondary primary
-                instantiateWeapon(activeWeapon);//equip secondary
-            }
-
-            //TODO test the contents of this Update() method
-            //test result: new weapon appears but first does not disappear
-            //This si because separate local methods are used to create and destroy weapons. So a weapon instantiated by one method is not referenced by another method.
-            //TODO : fix weapon destroy method by refencing variables (maybe make global in the scope of this class?)
+            
         }
 
         private void instantiateWeapon(Weapon wep)
-
         {
             GameObject weaponSocket = RequestDominantHand();
             var weaponPrefToCreate = wep.getPrefab();
@@ -130,6 +103,26 @@ namespace RPG.Character
             if(Input.GetMouseButton(0) && isTargetInRange(enemy.gameObject))
             {
                 attackTarget(enemy);
+            }
+            else if(Input.GetMouseButtonDown(1))
+            {
+                AttemptSpecialAbility1(enemy); //execute special ability on targetted enemy
+            }
+        }
+
+        //tries to execute special ability on a targetted player
+        private void AttemptSpecialAbility1(Enemy enemy)
+        {
+            //retrieve energy component of player (it manages energy levels)
+            var energyComponent = GetComponent<Energy>();
+
+            //if energy required for the ability is available
+            if(energyComponent.isEnoughEnergyAvailable(10f)) //TODO hard coded value
+            //TODO read from Scriptable Object for respective ability
+            {
+                //reduce required energy from energy store
+                energyComponent.consumeEnergy(10f); //need to update value
+                //Use the ability
             }
         }
 
