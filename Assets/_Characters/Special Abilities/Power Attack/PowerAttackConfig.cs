@@ -17,12 +17,13 @@ namespace RPG.Character
         [Header("Special Ability: Specific")]
         [SerializeField] float bonusDamage = 10f;
 
-        public override ISpecialAbility AddComponent(GameObject objectToAttachTo)
+        //signature of this method needs to be similar to that of the same method in the super class
+        public override void  AddComponent(GameObject objectToAttachTo)
         {
             var behaviourComponent = objectToAttachTo.AddComponent<PowerAttackBehaviour>();
             behaviourComponent.setConfig(this); //attach this instance of PowerAttackConfig 
             //to the power attack behaviour
-            return behaviourComponent;
+            behaviour =  behaviourComponent;
         }
     }
 }

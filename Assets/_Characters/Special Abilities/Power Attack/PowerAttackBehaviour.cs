@@ -24,10 +24,11 @@ namespace RPG.Character
         {
 
         }
+        
+        //implemented by the SpecialAbilityConfig abstract class due to forwarding
         public void Use()//this method is used here because this class uses the ISpecialAbility interface
         {
-
+            print("energy ball!!");
         }
     }
 }
-

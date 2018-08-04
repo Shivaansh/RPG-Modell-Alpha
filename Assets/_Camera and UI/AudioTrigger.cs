@@ -20,6 +20,7 @@ public class AudioTrigger : MonoBehaviour
         SphereCollider sphereCollider = gameObject.AddComponent<SphereCollider>(); //used for Gizmo
         sphereCollider.isTrigger = true; 
         sphereCollider.radius = triggerRadius;
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 
     void OnTriggerEnter(Collider other)

@@ -39,6 +39,7 @@ namespace RPG.Character
         {
             if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(1)) //on left/right click
             {
+                //TODO consider moving only on left click
                 aiControl.SetTarget(enemy.transform); //move to enemy
             }
         }

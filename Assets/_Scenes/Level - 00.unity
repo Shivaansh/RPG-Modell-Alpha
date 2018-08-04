@@ -3356,6 +3356,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2133665309}
     m_Modifications:
+    - target: {fileID: 114175476041197332, guid: 6bb704cf97634954e865478cc8336daf,
+        type: 2}
+      propertyPath: abilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4228972314501820, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 131
@@ -3393,6 +3398,12 @@ Prefab:
       propertyPath: energyBarImage
       value: 
       objectReference: {fileID: 1464139878}
+    - target: {fileID: 114175476041197332, guid: 6bb704cf97634954e865478cc8336daf,
+        type: 2}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bd2cbb62e900194f95f43704e8633d8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bb704cf97634954e865478cc8336daf, type: 2}
   m_IsPrefabParent: 0
