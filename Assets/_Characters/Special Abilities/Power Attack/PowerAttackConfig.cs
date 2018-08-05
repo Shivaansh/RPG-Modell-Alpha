@@ -25,6 +25,12 @@ namespace RPG.Character
             //to the power attack behaviour
             behaviour =  behaviourComponent;
         }
+
+        //returns value of bonus damage
+        public float getBonusDamage()
+        {
+            return bonusDamage;
+        }
     }
 }
 

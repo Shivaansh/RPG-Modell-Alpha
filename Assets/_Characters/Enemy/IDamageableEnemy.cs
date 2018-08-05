@@ -1,4 +1,9 @@
-﻿public interface IDamageableEnemy
+﻿
+namespace RPG.Character
 {
-    void TakeDamage(float damage);
+    public interface IDamageableEnemy
+    {
+        void TakeDamage(float damage);
+    }
 }
+

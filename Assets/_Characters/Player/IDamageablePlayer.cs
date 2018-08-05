@@ -1,4 +1,8 @@
-﻿public interface IDamageablePlayer
+﻿
+namespace RPG.Character
 {
-    void TakeDamage(float damage);
+    public interface IDamageablePlayer
+    {
+        void TakeDamage(float damage);
+    }
 }

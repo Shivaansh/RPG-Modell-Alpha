@@ -1,11 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using RPG.Utility;
 //abstract class
 //other classes need to derive from this class
 namespace RPG.Character
 {
+    public struct AbilityUseParameters
+    {
+        public IDamageableEnemy target;
+        public float baseDamage;
+
+        //constructor
+        public AbilityUseParameters(IDamageableEnemy target, float baseDamage)
+        {
+            this.target = target;
+            this.baseDamage = baseDamage;
+        }
+    }
+
     public abstract class SpecialAbilityConfig : ScriptableObject
     {
         [Header("Special Ability: General")] //header for inspector
@@ -25,5 +38,9 @@ namespace RPG.Character
         {
             behaviour.Use(); //forwarding Use request to behaviour script of derived child
         }
+    }
+    public interface ISpecialAbility
+    {
+        void Use();
     }
 }

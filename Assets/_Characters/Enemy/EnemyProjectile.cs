@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Character;
 
 public class EnemyProjectile : MonoBehaviour {
     //formerly Projectile: split into two classes to differentiate particles fired by player and enemy
@@ -12,11 +13,11 @@ public class EnemyProjectile : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {
-        Component damagedComponent = collider.gameObject.GetComponent(typeof(IDamageablePlayer));
+        Component damagedComponentOfPlayer = collider.gameObject.GetComponent(typeof(IDamageablePlayer));
         //the damaged component should implement the IDamageable interface
-        if (damagedComponent)
+        if (damagedComponentOfPlayer)
         {
-            (damagedComponent as IDamageablePlayer).TakeDamage(damageCaused);
+            (damagedComponentOfPlayer as IDamageablePlayer).TakeDamage(damageCaused);
         }
         Destroy(gameObject);
     } 

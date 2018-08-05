@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Character;
 
 public class PlayerProjectile : MonoBehaviour {
     //spinoff of EnemyProjectile, this script ensures that Player fired projectiles do not damage the player
