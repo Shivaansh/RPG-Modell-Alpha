@@ -14,7 +14,9 @@ namespace RPG.Character
 
         //maximum player health
         [SerializeField] float maxHealthPoints = 100f;
-        
+
+        [SerializeField] float playerDamage = 10f;
+
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
         [SerializeField] int startWeapon = 0; //only for testing purposes, remove when weapon switching is enabled.
@@ -88,12 +90,6 @@ namespace RPG.Character
             return dominantHands[0].gameObject; //return the dominant hand game object
         }
 
-        private void destroyWeapon(Weapon wep)
-        {
-            var weaponPrefToDestroy = wep.getPrefab();
-            Destroy(weaponPrefToDestroy);
-        }
-
         private void registerLeftClick()
         {
             camCaster = FindObjectOfType<CameraRaycaster>();
@@ -117,14 +113,16 @@ namespace RPG.Character
         {
             //retrieve energy component of player (it manages energy levels)
             var energyComponent = GetComponent<Energy>();
-
+            float cost = abilities[abilityIndex].getEnergyCost();
             //if energy required for the ability is available
-            if(energyComponent.isEnoughEnergyAvailable(10f)) //TODO hard coded value
-            //TODO read from Scriptable Object for respective ability
+            if (energyComponent.isEnoughEnergyAvailable(cost))
             {
                 //reduce required energy from energy store
-                energyComponent.consumeEnergy(10f); //need to update value
-                abilities[abilityIndex].Use();
+                energyComponent.consumeEnergy(cost); 
+
+                //construct ability Use parameters struct from instance of the ability
+                var abilityParameters = new AbilityUseParameters(enemy, playerDamage);
+                abilities[abilityIndex].Use(abilityParameters); //pass ability parameters through struct
             }
         }
 

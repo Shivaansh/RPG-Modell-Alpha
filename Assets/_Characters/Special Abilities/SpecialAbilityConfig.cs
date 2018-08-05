@@ -6,12 +6,15 @@ using RPG.Utility;
 //other classes need to derive from this class
 namespace RPG.Character
 {
-    public struct AbilityUseParameters
+    //think of a struct like an ADT
+    public struct AbilityUseParameters //parameters to be passed on to children of this abstract class (like Power Attack)
+        //here you declare the properties of the ADT
     {
         public IDamageableEnemy target;
         public float baseDamage;
 
-        //constructor
+        //constructor for the struct
+        //here you add the values to a particular instance of an ADT
         public AbilityUseParameters(IDamageableEnemy target, float baseDamage)
         {
             this.target = target;
@@ -34,13 +37,19 @@ namespace RPG.Character
         abstract public void  AddComponent(GameObject objectToAttachTo);
         //this is something that all derived classes must implement
 
-        public void Use() //to implement the ability through Player.cs in the game at runtime
+        public void Use(AbilityUseParameters parameters) //to implement the ability through Player.cs in the game at runtime
         {
-            behaviour.Use(); //forwarding Use request to behaviour script of derived child
+            behaviour.Use(parameters); //forwarding Use request to behaviour script of derived child
+        }
+
+        //return energy cost, method useable by all derived classes
+        public float getEnergyCost()
+        {
+            return energyCost;
         }
     }
     public interface ISpecialAbility
     {
-        void Use();
+        void Use(AbilityUseParameters parameters);
     }
 }

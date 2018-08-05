@@ -26,9 +26,16 @@ namespace RPG.Character
         }
         
         //implemented by the SpecialAbilityConfig abstract class due to forwarding
-        public void Use()//this method is used here because this class uses the ISpecialAbility interface
+
+            //THIS IS THE LOWEST LEVEL USE METHOD.
+        public void Use(AbilityUseParameters parameters)//this method is used here because this class uses the ISpecialAbility interface
         {
-            print("energy ball!! damage caused: " + config.getBonusDamage());
+            print("energy ball released by: " + gameObject.name);
+            //print("Player base damge: " + parameters.baseDamage); //check if parameters pass as struct correctly
+            //total damage caused by ability is player  base damage PLUS ability damage
+            float damageToCauseOnHit = parameters.baseDamage + config.getBonusDamage();
+            parameters.target.TakeDamage(damageToCauseOnHit); //using IDamageableEnemy interface
+            //instantiate projectile and add animation?
         }
     }
 }
