@@ -3402,7 +3402,13 @@ Prefab:
         type: 2}
       propertyPath: abilities.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 1bd2cbb62e900194f95f43704e8633d8,
+      objectReference: {fileID: 11400000, guid: 1f02866d2ae969d469786e9270f35847,
+        type: 2}
+    - target: {fileID: 114175476041197332, guid: 6bb704cf97634954e865478cc8336daf,
+        type: 2}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f02866d2ae969d469786e9270f35847,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bb704cf97634954e865478cc8336daf, type: 2}

@@ -21,7 +21,7 @@ namespace RPG.Character
         //return if a certain amount of energy is available
         public bool isEnoughEnergyAvailable(float cost)
         {
-            return cost < currentEnergyPoints;
+            return cost <= currentEnergyPoints;
         }
 
         public  void consumeEnergy(float cost)
