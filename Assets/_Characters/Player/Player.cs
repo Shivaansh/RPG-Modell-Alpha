@@ -20,7 +20,9 @@ namespace RPG.Character
         Weapon activeWeapon;
         [SerializeField] Weapon[] weaponList = new Weapon[2];
         [SerializeField] int startWeapon = 0; //only for testing purposes, remove when weapon switching is enabled.
-        [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controller
+        [SerializeField] AnimatorOverrideController animOController; //stores the defined animator override controlle
+        [SerializeField] float regenPerSecond = 10f;
+        [SerializeField] float healTimePeriod = 0f;
         Animator animator;
         float lastHitTime = 0f;
 
@@ -65,7 +67,20 @@ namespace RPG.Character
 
         void Update()
         {
-            
+            regenerateHealth();
+        }
+
+        //regenerates health
+        private void regenerateHealth()
+        {
+            if (healTimePeriod > 1f)
+            {
+                //update health using mathf.clamp
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints, 0f, maxHealthPoints - 20f);
+                currentHealthPoints += regenPerSecond;
+                healTimePeriod = 0f;
+            }
+            healTimePeriod += Time.deltaTime;
         }
 
         private void instantiateWeapon(Weapon wep)

@@ -22,10 +22,16 @@ namespace RPG.Character
 
         void Update()
         {
+            regenerateEnergy();
+        }
+
+        //regenerates energy
+        private void regenerateEnergy()
+        {
             if (timePeriod > 1f)
             {
                 //update energy using mathf.clamp
-                currentEnergyPoints = Mathf.Clamp(currentEnergyPoints , 0f, maxEnergypoints-5f);
+                currentEnergyPoints = Mathf.Clamp(currentEnergyPoints, 0f, maxEnergypoints - 5f);
                 currentEnergyPoints += regenPerSecond;
                 updateEnergyBar();
                 timePeriod = 0f;
