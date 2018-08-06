@@ -1,7 +1,7 @@
 # RPG-Modell-Alpha
 IN PROGRESS: A Unity RPG (3D) for PC with click to move implementation. Repo used mainly for backup and version control.
 
-
+VIDEO DEMO: https://www.youtube.com/watch?v=RLTGbBoFpj0 (video not in full resolution)
 
 Log May 31, 2018: I have updated the assets (mostly the models of houses and other environmental set pieces) and placed them in a folder so that if I can get a collaborator for the art and level design tasks, it is easy for them to locate and place the models.
 
@@ -20,10 +20,8 @@ The projectile fired by player: PlayerProjectile. Player implements IDamageableP
 The projectile fired by enemy: EnemyProjectile. Enemy implements IDamageableEnemy
 
 Log June 15, 2018: Added some objects to the village and forest areas, made the bridge navigation compatible. USE THE NAVIGATION STATIC OPTION in the future.
-Link to demo: https://youtu.be/HtwSQowXeHk  (as of progress upto lecture 60)
 
 Log june 16, 2018: Started work on stat sheet for player and enemy attributes. Link here -> https://docs.google.com/spreadsheets/d/1xpPusDjEatUJLLt8BOa7suODnX1R7NMYPWJ6uducxGc/edit?usp=sharing
-Playable Demo Video -> https://youtu.be/rNYqGTAujp0
 
 Log June 21, 2018: Added some grass and water to the terrain for testing. Will add full coverage (including trees) once city design is fully mapped out. (TODO?) Create an asset demo scene. SECTION 2 COMPLETE
 
@@ -38,6 +36,7 @@ Log July 25, 2018: Animations added to weapons, need to make two fields in Playe
 
 Log July 27, 2018: New terrain created, trees added, detail added, need to improve quality of "Marketplace" and "Pond near village".
 
+Log August 6, 2018: Added special abilities, refactored CameraRaycasting and Removed Cursor Affordances. Energy regeneration added.
 
 
 /**************** LIST OF FEATURES TO ADD
@@ -46,11 +45,11 @@ Log July 27, 2018: New terrain created, trees added, detail added, need to impro
 
 2) Dynamic weather conditions
 
-3) Damage values and number based health bar
+3) Animations, sounds and particle effects for special abilities.
 
 4) IMPORTANT: NEED TO MAP OUT LEVEL TO ADD DIALOGUE (Recorded/text?)
 
-5) REfactor raycasting system? (Lecture 108 and 109)
+5) Reset and draw level story layout.
 
 
 
@@ -64,6 +63,6 @@ Log July 27, 2018: New terrain created, trees added, detail added, need to impro
 
 
 /**************** NOTES
-
+Maybe add freeze and poison abilities?
 
 ********/
