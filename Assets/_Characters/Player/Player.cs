@@ -76,7 +76,7 @@ namespace RPG.Character
             if (healTimePeriod > 1f)
             {
                 //update health using mathf.clamp
-                currentHealthPoints = Mathf.Clamp(currentHealthPoints, 0f, maxHealthPoints - 20f);
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints, 0f, maxHealthPoints - 10f);
                 currentHealthPoints += regenPerSecond;
                 healTimePeriod = 0f;
             }
