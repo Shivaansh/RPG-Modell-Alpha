@@ -26,6 +26,8 @@ namespace RPG.Character
         Animator animator;
         float lastHitTime = 0f;
 
+        LevelManager levelManager;
+
         //array of abilities
         [SerializeField] SpecialAbilityConfig[] abilities; 
         
@@ -44,6 +46,7 @@ namespace RPG.Character
             instantiateWeapon(activeWeapon);
             setupAnimator();
             abilities[0].AddComponent(gameObject);
+            levelManager = GetComponent<LevelManager>();
         }
 
         public float getHealthLevel()
@@ -174,9 +177,12 @@ namespace RPG.Character
         {
             currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
             //ensure that health stays between 0 and max, for the sake of robustness
-            if (currentHealthPoints <= 0) { Destroy(gameObject); } //kills the player when health reached 0
-           //TODO: add a load level statement to load death scene, to load game over screen.
-           //this  = Player
+            if (currentHealthPoints <= 0)
+            {
+                Destroy(gameObject); //kills the player when health reached 0
+
+                levelManager.LoadLevel("GameOver");
+            }
         }
     }
 }
