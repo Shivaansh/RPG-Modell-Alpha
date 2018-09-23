@@ -38,6 +38,11 @@ namespace RPG.Character
             }
         }
 
+        public float getHealth()
+        {
+           return currentHealthPoints;
+        }
+
         void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player"); //player variable retrieves the player from the scene
