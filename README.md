@@ -2,6 +2,7 @@
 IN PROGRESS: A Unity RPG (3D) for PC with click to move implementation. Repo used mainly for backup and version control.
 
 VIDEO DEMO: https://www.youtube.com/watch?v=RLTGbBoFpj0 (video not in full resolution)
+RECENT PLAYABLE BUILD: https://www.dropbox.com/s/3l6kng3mmw0uyq0/RPG_Modell_Alpha.zip?dl=0
 
 Log May 31, 2018: I have updated the assets (mostly the models of houses and other environmental set pieces) and placed them in a folder so that if I can get a collaborator for the art and level design tasks, it is easy for them to locate and place the models.
 
